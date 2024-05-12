@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.service import Service as FFService
 from selenium.webdriver.firefox.options import Options as FFOptions
 
+
 def pytest_addoption(parser):
     parser.addoption(
         "--browser", default="ch", choices=["ya", "ch", "ff"]
@@ -17,6 +18,10 @@ def pytest_addoption(parser):
     parser.addoption(
         "--yadriver", action="store_true", default="*/yandexdriver"
     )
+    parser.addoption(
+        "--url", default="http://10.0.2.15:8081"
+    )
+
 
 @pytest.fixture()
 def browser(request):
@@ -47,6 +52,14 @@ def browser(request):
     browser.set_window_size(1920, 1080)
     # так же можно использовать browser.maximize_window()
 
+    browser.implicitly_wait(5)
+
     yield browser
 
     browser.close()
+
+
+@pytest.fixture
+def base_url(request):
+    url = request.config.getoption('--url')
+    return url
