@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
-
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from page_objects.admin_page import AdminPage
+from page_objects.home_page import HomePage
+from page_objects.header_element import HeaderElement
+from page_objects.catalog_page import CatalogPage
+from page_objects.registration_page import RegistrationPage
 
 
 def test_elements(browser, base_url):
@@ -32,64 +33,109 @@ def test_elements(browser, base_url):
     assert browser.find_element(By.CSS_SELECTOR, "#input-email")
     assert browser.find_element(By.CSS_SELECTOR, "#input-newsletter")
     browser.get(f"{base_url}/administration/")
-    assert browser.find_element(By.CSS_SELECTOR, "#input-username")
-    assert browser.find_element(By.CSS_SELECTOR, "#input-password")
+    assert AdminPage(browser).USERNAME_INPUT
+    assert AdminPage(browser).PASSWORD_INPUT
     assert browser.find_elements(By.CSS_SELECTOR, ".fa-solid.fa-lock")[0]
     assert browser.find_elements(By.CSS_SELECTOR, ".fa-solid.fa-lock")[1]
     assert browser.find_element(By.CSS_SELECTOR, ".card-body")
 
 
 def test_admin_login(browser, base_url):
-    browser.get(f"{base_url}/administration/")
-    """fill inputs and click login"""
-    WebDriverWait(browser, 2).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#input-username")))
-    browser.find_element(By.CSS_SELECTOR, "#input-username").send_keys("user")
-    browser.find_element(By.CSS_SELECTOR, "#input-password").send_keys("bitnami")
-    browser.find_element(By.CSS_SELECTOR, ".btn.btn-primary").click()
-    profile = browser.find_element(By.CSS_SELECTOR, ".rounded-circle")
-    assert profile.get_attribute("title") == "user"
-    assert profile.get_attribute("alt") == "John Doe"
-    WebDriverWait(browser, 2).until(
-        EC.visibility_of_element_located((By.XPATH, "//*[text()='Logout']"))).click()
-    assert browser.current_url.__contains__('/administration/index.php?route=common/login')
+    admin_page = AdminPage(browser)
+    admin_page.open(base_url)
+    admin_page.login("user", "bitnami")
+    assert admin_page.title_username() == "user"
+    assert admin_page.alt_username() == "John Doe"
+    assert browser.current_url.__contains__(base_url)
 
 
 def test_add_to_cart(browser, base_url):
-    browser.get(f"{base_url}")
-    browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    WebDriverWait(browser, 2).until(
-        EC.visibility_of_element_located((By.CSS_SELECTOR, ".fa-solid.fa-shopping-cart"))).click()
-    name_product_listing = browser.find_element(By.CSS_SELECTOR, ".description a")
-    product_listing_text = name_product_listing.get_attribute('text')
-    time.sleep(1)
-    browser.execute_script("window.scrollTo(1000, 0);")
-    time.sleep(5)
-    WebDriverWait(browser, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, ".btn.btn-lg.btn-inverse.btn-block.dropdown-toggle"))).click()
-    name_product_cart = browser.find_element(By.CSS_SELECTOR, ".text-start a")
-    product_cart_text = name_product_cart.get_attribute('text')
-    assert product_listing_text == product_cart_text
+    home_page = HomePage(browser)
+    home_page.open(base_url)
+    home_page.scroll_down()
+    home_page.add_product_to_cart()
+    product_name_listing = home_page.get_product_name_listing()
+    home_page.scroll_up()
+    home_page.click_cart_button()
+    product_name_cart = home_page.get_product_name_cart()
+    assert product_name_listing == product_name_cart
 
 
 def test_currency_change_home(browser, base_url):
-    browser.get(f"{base_url}")
-    WebDriverWait(browser, 2).until(
-        EC.visibility_of_element_located((By.XPATH, "//*[text()='Currency']"))).click()
-    WebDriverWait(browser, 2).until(
-        EC.visibility_of_element_located((By.XPATH, "//*[text()='€ Euro']"))).click()
-    price = browser.find_element(By.CSS_SELECTOR, ".price-new")
-    price_text = price.text
-    assert price_text.__contains__("€")
-    assert not price_text.__contains__("$")
+    home_page = HomePage(browser)
+    header = HeaderElement(browser)
+    home_page.open(base_url)
+    header.click_currency()
+    header.select_euro()
+    price = home_page.get_price_value()
+    assert price.__contains__("€")
+    assert not price.__contains__("$")
 
 
 def test_currency_change_catalog(browser, base_url):
-    browser.get(f"{base_url}/en-gb/catalog/laptop-notebook")
-    WebDriverWait(browser, 2).until(
-        EC.visibility_of_element_located((By.XPATH, "//*[text()='Currency']"))).click()
-    WebDriverWait(browser, 2).until(
-        EC.visibility_of_element_located((By.XPATH, "//*[text()='€ Euro']"))).click()
-    price = browser.find_element(By.CSS_SELECTOR, ".price-new")
-    price_text = price.text
-    assert price_text.__contains__("€")
-    assert not price_text.__contains__("$")
+    catalog_page = CatalogPage(browser)
+    header = HeaderElement(browser)
+    catalog_page.open(base_url)
+    header.click_currency()
+    header.select_euro()
+    price = HomePage(browser).get_price_value()
+    assert price.__contains__("€")
+    assert not price.__contains__("$")
+
+
+def test_add_product(browser, base_url):
+    admin_page = AdminPage(browser)
+    admin_page.open(base_url)
+    admin_page.login("user", "bitnami")
+    admin_page.select_catalog()
+    admin_page.select_products()
+    admin_page.add_product()
+    admin_page.add_product_name("test item")
+    admin_page.add_meta_tag("test")
+    admin_page.select_data_tab()
+    admin_page.add_model("12345")
+    admin_page.select_seo_tab()
+    admin_page.add_seo_name("12345")
+    admin_page.save_product()
+    admin_page.find_popup_success()
+
+
+def test_delete_product(browser, base_url):
+    admin_page = AdminPage(browser)
+    admin_page.open(base_url)
+    admin_page.login("user", "bitnami")
+    admin_page.select_catalog()
+    admin_page.select_products()
+    HomePage(browser).scroll_down()
+    admin_page.to_the_last_page()
+    admin_page.select_last_product()
+    HomePage(browser).scroll_up()
+    admin_page.delete_product()
+    admin_page.find_popup_success()
+
+
+def test_user_registration(browser, base_url):
+    registration_page = RegistrationPage(browser)
+    registration_page.open(base_url)
+    registration_page.input_data("Oleg", "Ivanov", "123@gmail.com", "12345")
+    registration_page.confirm_agreement()
+    registration_page.complete_registration()
+    title_text = registration_page.get_title_text()
+    assert title_text == "Your Account Has Been Created!"
+
+
+def test_change_currency(browser, base_url):
+    header = HeaderElement(browser)
+    HomePage(browser).open(base_url)
+    header.click_currency()
+    header.select_euro()
+    currency_icon = header.get_currency_icon()
+    assert currency_icon == "€"
+    header.click_currency()
+    header.select_pound()
+    currency_icon = header.get_currency_icon()
+    assert currency_icon == "£"
+    header.click_currency()
+    header.select_dollar()
+    currency_icon = header.get_currency_icon()
+    assert currency_icon == "$"
