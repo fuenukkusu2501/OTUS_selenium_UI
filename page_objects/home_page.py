@@ -1,0 +1,38 @@
+from selenium.webdriver.common.by import By
+from page_objects.base_page import BasePage
+
+
+class HomePage(BasePage):
+    LISTING_CART_BUTTON = By.CSS_SELECTOR, ".fa-solid.fa-shopping-cart"
+    HOMEPAGE_CART_BUTTON = By.CSS_SELECTOR, ".btn.btn-lg.btn-inverse.btn-block.dropdown-toggle"
+    PRICE = By.CSS_SELECTOR, ".price-new"
+
+    def open(self, url):
+        self.browser.get(url)
+
+    def scroll_down(self):
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    def scroll_up(self):
+        self.browser.execute_script("window.scrollTo(1000, 0);")
+
+    def add_product_to_cart(self):
+        self.get_element(self.LISTING_CART_BUTTON).click()
+
+    def get_product_name_listing(self):
+        name_product_listing = self.get_element((By.CSS_SELECTOR, ".description a"))
+        product_listing_text = name_product_listing.get_attribute('text')
+        return product_listing_text
+
+    def get_product_name_cart(self):
+        name_product_cart = self.get_element((By.CSS_SELECTOR, ".text-start a"))
+        product_cart_text = name_product_cart.get_attribute('text')
+        return product_cart_text
+
+    def click_cart_button(self):
+        self.get_element(self.HOMEPAGE_CART_BUTTON).click()
+
+    def get_price_value(self):
+        prise = self.get_element(self.PRICE).text
+        return prise
+

@@ -52,8 +52,6 @@ def browser(request):
     browser.set_window_size(1920, 1080)
     # так же можно использовать browser.maximize_window()
 
-    browser.implicitly_wait(5)
-
     yield browser
 
     browser.close()
