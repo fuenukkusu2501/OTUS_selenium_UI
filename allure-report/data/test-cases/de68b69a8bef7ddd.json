@@ -1,0 +1,276 @@
+{
+  "uid" : "de68b69a8bef7ddd",
+  "name" : "Регистрация",
+  "fullName" : "tests.test_start#test_user_registration",
+  "historyId" : "276a2f858328b159336cdee904d860f5",
+  "time" : {
+    "start" : 1718902164710,
+    "stop" : 1718902186651,
+    "duration" : 21941
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.TimeoutException: Message:",
+  "statusTrace" : "browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"45b402c0494bf2f85321be85b68be579\")>, base_url = 'http://10.0.2.15:8081'\n\n    @allure.title(\"Регистрация\")\n    def test_user_registration(browser, base_url):\n        registration_page = RegistrationPage(browser)\n        registration_page.open(base_url)\n        registration_page.input_data(\"Oleg\", \"Ivanov\", \"123@gmail.com\", \"12345\")\n        registration_page.confirm_agreement()\n        registration_page.complete_registration()\n>       title_text = registration_page.get_title_text()\n\ntests/test_start.py:124: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\npage_objects/registration_page.py:39: in get_title_text\n    WebDriverWait(self.browser, 10).until(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"45b402c0494bf2f85321be85b68be579\")>, method = <function url_contains.<locals>._predicate at 0x76c18ef51900>, message = ''\n\n    def until(self, method, message: str = \"\"):\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value does not evaluate to ``False``.\n    \n        :param method: callable(WebDriver)\n        :param message: optional message for :exc:`TimeoutException`\n        :returns: the result of the last call to `method`\n        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            time.sleep(self._poll)\n            if time.monotonic() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\n../../../.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1718902164710,
+      "stop" : 1718902164710,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "browser",
+    "time" : {
+      "start" : 1718902158578,
+      "stop" : 1718902164710,
+      "duration" : 6132
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "aedce65cc118c28b",
+      "name" : "45b402c0494bf2f85321be85b68be579",
+      "source" : "aedce65cc118c28b.json",
+      "type" : "application/json",
+      "size" : 965
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.TimeoutException: Message:",
+    "statusTrace" : "browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"45b402c0494bf2f85321be85b68be579\")>, base_url = 'http://10.0.2.15:8081'\n\n    @allure.title(\"Регистрация\")\n    def test_user_registration(browser, base_url):\n        registration_page = RegistrationPage(browser)\n        registration_page.open(base_url)\n        registration_page.input_data(\"Oleg\", \"Ivanov\", \"123@gmail.com\", \"12345\")\n        registration_page.confirm_agreement()\n        registration_page.complete_registration()\n>       title_text = registration_page.get_title_text()\n\ntests/test_start.py:124: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\npage_objects/registration_page.py:39: in get_title_text\n    WebDriverWait(self.browser, 10).until(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"45b402c0494bf2f85321be85b68be579\")>, method = <function url_contains.<locals>._predicate at 0x76c18ef51900>, message = ''\n\n    def until(self, method, message: str = \"\"):\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value does not evaluate to ``False``.\n    \n        :param method: callable(WebDriver)\n        :param message: optional message for :exc:`TimeoutException`\n        :returns: the result of the last call to `method`\n        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            time.sleep(self._poll)\n            if time.monotonic() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\n../../../.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException",
+    "steps" : [ {
+      "name" : "Открываю http://10.0.2.15:8081/en-gb?route=account/register",
+      "time" : {
+        "start" : 1718902164710,
+        "stop" : 1718902165245,
+        "duration" : 535
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Ввожу данные для регистрации",
+      "time" : {
+        "start" : 1718902165245,
+        "stop" : 1718902175891,
+        "duration" : 10646
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "firstname",
+        "value" : "'Oleg'"
+      }, {
+        "name" : "lastname",
+        "value" : "'Ivanov'"
+      }, {
+        "name" : "email",
+        "value" : "'123@gmail.com'"
+      }, {
+        "name" : "password",
+        "value" : "'12345'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Подтверждаю соглашение",
+      "time" : {
+        "start" : 1718902175891,
+        "stop" : 1718902176054,
+        "duration" : 163
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Завершаб регистрацию нажатием на кнопку Continue",
+      "time" : {
+        "start" : 1718902176054,
+        "stop" : 1718902176436,
+        "duration" : 382
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Получаю текст заголовка",
+      "time" : {
+        "start" : 1718902176436,
+        "stop" : 1718902186645,
+        "duration" : 10209
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: \n\n",
+      "statusTrace" : "  File \"/home/fuenukkusu2501/.local/lib/python3.10/site-packages/allure_commons/_allure.py\", line 192, in impl\n    return func(*a, **kw)\n  File \"/home/fuenukkusu2501/Develop/tmp/OTUS_selenium_UI/page_objects/registration_page.py\", line 39, in get_title_text\n    WebDriverWait(self.browser, 10).until(\n  File \"/home/fuenukkusu2501/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py\", line 95, in until\n    raise TimeoutException(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1718902186669,
+      "stop" : 1718902186922,
+      "duration" : 253
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e5fa3c497635599",
+      "name" : "failure_screenshot",
+      "source" : "e5fa3c497635599.png",
+      "type" : "image/png",
+      "size" : 100338
+    }, {
+      "uid" : "760b3cd5d6e46814",
+      "name" : "page_source",
+      "source" : "760b3cd5d6e46814.html",
+      "type" : "text/html",
+      "size" : 22113
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "Ubuntu"
+  }, {
+    "name" : "thread",
+    "value" : "18087-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "7c4a953896b5b409",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nStacktrace:\n#0 0x643d03496863 <unknown>\n#1 0x643d0318c8c6 <unknown>\n#2 0x643d031c0d34 <unknown>\n#3 0x643d031bcd3d <unknown>\n#4 0x643d03205aed <unknown>\n#5 0x643d031f9343 <unknown>\n#6 0x643d031ca593 <unknown>\n#7 0x643d031caf5e <unknown>\n#8 0x643d0345a84b <unknown>\n#9 0x643d0345e7a5 <unknown>\n#10 0x643d03448571 <unknown>\n#11 0x643d0345f332 <unknown>\n#12 0x643d0342d87f <unknown>\n#13 0x643d03485728 <unknown>\n#14 0x643d034858fb <unknown>\n#15 0x643d034959b4 <unknown>\n#16 0x774137294ac3 <unknown>",
+      "time" : {
+        "start" : 1718696618176,
+        "stop" : 1718696618176,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "53496384adf3fd24",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nStacktrace:\n#0 0x5cd5f1ade863 <unknown>\n#1 0x5cd5f17d48c6 <unknown>\n#2 0x5cd5f1808d34 <unknown>\n#3 0x5cd5f1804d3d <unknown>\n#4 0x5cd5f184daed <unknown>\n#5 0x5cd5f1841343 <unknown>\n#6 0x5cd5f1812593 <unknown>\n#7 0x5cd5f1812f5e <unknown>\n#8 0x5cd5f1aa284b <unknown>\n#9 0x5cd5f1aa67a5 <unknown>\n#10 0x5cd5f1a90571 <unknown>\n#11 0x5cd5f1aa7332 <unknown>\n#12 0x5cd5f1a7587f <unknown>\n#13 0x5cd5f1acd728 <unknown>\n#14 0x5cd5f1acd8fb <unknown>\n#15 0x5cd5f1add9b4 <unknown>\n#16 0x7555c5094ac3 <unknown>",
+      "time" : {
+        "start" : 1718696488599,
+        "stop" : 1718696488599,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "9ecb84a76cbac420",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.TimeoutException: Message:",
+      "time" : {
+        "start" : 1718649078449,
+        "stop" : 1718649093242,
+        "duration" : 14793
+      }
+    }, {
+      "uid" : "d88e468247a548f9",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.TimeoutException: Message:",
+      "time" : {
+        "start" : 1717934928258,
+        "stop" : 1717934942950,
+        "duration" : 14692
+      }
+    }, {
+      "uid" : "6e7e1c9292b3ecb5",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=123.0.6312.105)\nStacktrace:\n#0 0x61d3f0244863 <unknown>\n#1 0x61d3eff3a8c6 <unknown>\n#2 0x61d3eff329f3 <unknown>\n#3 0x61d3eff22b2b <unknown>\n#4 0x61d3eff240c2 <unknown>\n#5 0x61d3eff22e4c <unknown>\n#6 0x61d3eff22638 <unknown>\n#7 0x61d3eff22485 <unknown>\n#8 0x61d3eff20516 <unknown>\n#9 0x61d3eff20a2a <unknown>\n#10 0x61d3eff3d24e <unknown>\n#11 0x61d3effc67c5 <unknown>\n#12 0x61d3effa75a2 <unknown>\n#13 0x61d3effc5c19 <unknown>\n#14 0x61d3effa7343 <unknown>\n#15 0x61d3eff78593 <unknown>\n#16 0x61d3eff78f5e <unknown>\n#17 0x61d3f020884b <unknown>\n#18 0x61d3f020c7a5 <unknown>\n#19 0x61d3f01f6571 <unknown>\n#20 0x61d3f020d332 <unknown>\n#21 0x61d3f01db87f <unknown>\n#22 0x61d3f0233728 <unknown>\n#23 0x61d3f02338fb <unknown>\n#24 0x61d3f02439b4 <unknown>\n#25 0x76436ca94ac3 <unknown>",
+      "time" : {
+        "start" : 1717933809588,
+        "stop" : 1717933810370,
+        "duration" : 782
+      }
+    }, {
+      "uid" : "44e2c2f1bcf1d099",
+      "status" : "passed",
+      "time" : {
+        "start" : 1717855414800,
+        "stop" : 1717855438714,
+        "duration" : 23914
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "de68b69a8bef7ddd.json",
+  "parameterValues" : [ ]
+}

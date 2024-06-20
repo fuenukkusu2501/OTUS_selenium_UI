@@ -1,0 +1,322 @@
+{
+  "uid" : "32dc65fb336474ec",
+  "name" : "Удалить товар",
+  "fullName" : "tests.test_start#test_delete_product",
+  "historyId" : "7d181faf2f27682f61cb2a0d2e84375e",
+  "time" : {
+    "start" : 1718902138982,
+    "stop" : 1718902158266,
+    "duration" : 19284
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1718902138981,
+      "stop" : 1718902138982,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "browser",
+    "time" : {
+      "start" : 1718902132802,
+      "stop" : 1718902138981,
+      "duration" : 6179
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "70ee4d91988b8b4e",
+      "name" : "ab6fee28a9bc884ddcd8f36dfa3dafe5",
+      "source" : "70ee4d91988b8b4e.json",
+      "type" : "application/json",
+      "size" : 965
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открываю http://10.0.2.15:8081/administration",
+      "time" : {
+        "start" : 1718902138982,
+        "stop" : 1718902141406,
+        "duration" : 2424
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Авторизую пользователя",
+      "time" : {
+        "start" : 1718902141406,
+        "stop" : 1718902144755,
+        "duration" : 3349
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "username",
+        "value" : "'user'"
+      }, {
+        "name" : "password",
+        "value" : "'bitnami'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Перехожу в меню Каталог",
+      "time" : {
+        "start" : 1718902144756,
+        "stop" : 1718902151982,
+        "duration" : 7226
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Выбираю товар",
+      "time" : {
+        "start" : 1718902151983,
+        "stop" : 1718902154793,
+        "duration" : 2810
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Скроллю страницу вниз",
+      "time" : {
+        "start" : 1718902154793,
+        "stop" : 1718902154892,
+        "duration" : 99
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Перехожу на последнюю страницу",
+      "time" : {
+        "start" : 1718902154892,
+        "stop" : 1718902155359,
+        "duration" : 467
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Выбираю последний товар в списке",
+      "time" : {
+        "start" : 1718902155360,
+        "stop" : 1718902156528,
+        "duration" : 1168
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Скроллю страницу вверх",
+      "time" : {
+        "start" : 1718902156528,
+        "stop" : 1718902156739,
+        "duration" : 211
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Удаляю заказ",
+      "time" : {
+        "start" : 1718902156739,
+        "stop" : 1718902157335,
+        "duration" : 596
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Ищу поп-ап",
+      "time" : {
+        "start" : 1718902157335,
+        "stop" : 1718902158266,
+        "duration" : 931
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1718902158267,
+      "stop" : 1718902158483,
+      "duration" : 216
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "Ubuntu"
+  }, {
+    "name" : "thread",
+    "value" : "18087-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "504521ed0d06f22c",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nStacktrace:\n#0 0x581a8d55a863 <unknown>\n#1 0x581a8d2508c6 <unknown>\n#2 0x581a8d284d34 <unknown>\n#3 0x581a8d280d3d <unknown>\n#4 0x581a8d2c9aed <unknown>\n#5 0x581a8d2bd343 <unknown>\n#6 0x581a8d28e593 <unknown>\n#7 0x581a8d28ef5e <unknown>\n#8 0x581a8d51e84b <unknown>\n#9 0x581a8d5227a5 <unknown>\n#10 0x581a8d50c571 <unknown>\n#11 0x581a8d523332 <unknown>\n#12 0x581a8d4f187f <unknown>\n#13 0x581a8d549728 <unknown>\n#14 0x581a8d5498fb <unknown>\n#15 0x581a8d5599b4 <unknown>\n#16 0x7acd50094ac3 <unknown>",
+      "time" : {
+        "start" : 1718696618008,
+        "stop" : 1718696618008,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6f673e109d1bcb81",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nStacktrace:\n#0 0x60cf1ef66863 <unknown>\n#1 0x60cf1ec5c8c6 <unknown>\n#2 0x60cf1ec90d34 <unknown>\n#3 0x60cf1ec8cd3d <unknown>\n#4 0x60cf1ecd5aed <unknown>\n#5 0x60cf1ecc9343 <unknown>\n#6 0x60cf1ec9a593 <unknown>\n#7 0x60cf1ec9af5e <unknown>\n#8 0x60cf1ef2a84b <unknown>\n#9 0x60cf1ef2e7a5 <unknown>\n#10 0x60cf1ef18571 <unknown>\n#11 0x60cf1ef2f332 <unknown>\n#12 0x60cf1eefd87f <unknown>\n#13 0x60cf1ef55728 <unknown>\n#14 0x60cf1ef558fb <unknown>\n#15 0x60cf1ef659b4 <unknown>\n#16 0x72750be94ac3 <unknown>",
+      "time" : {
+        "start" : 1718696488425,
+        "stop" : 1718696488425,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "36c61d41805bdc54",
+      "status" : "passed",
+      "time" : {
+        "start" : 1718649066732,
+        "stop" : 1718649074893,
+        "duration" : 8161
+      }
+    }, {
+      "uid" : "b6111bebb10e95cb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1717934916525,
+        "stop" : 1717934924477,
+        "duration" : 7952
+      }
+    }, {
+      "uid" : "96cb46d8fc4e03de",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=123.0.6312.105)\nStacktrace:\n#0 0x5f169eb85863 <unknown>\n#1 0x5f169e87b8c6 <unknown>\n#2 0x5f169e8739f3 <unknown>\n#3 0x5f169e863b2b <unknown>\n#4 0x5f169e8650c2 <unknown>\n#5 0x5f169e863e4c <unknown>\n#6 0x5f169e863638 <unknown>\n#7 0x5f169e863485 <unknown>\n#8 0x5f169e861516 <unknown>\n#9 0x5f169e861a2a <unknown>\n#10 0x5f169e87e24e <unknown>\n#11 0x5f169e9077c5 <unknown>\n#12 0x5f169e8e85a2 <unknown>\n#13 0x5f169e906c19 <unknown>\n#14 0x5f169e8e8343 <unknown>\n#15 0x5f169e8b9593 <unknown>\n#16 0x5f169e8b9f5e <unknown>\n#17 0x5f169eb4984b <unknown>\n#18 0x5f169eb4d7a5 <unknown>\n#19 0x5f169eb37571 <unknown>\n#20 0x5f169eb4e332 <unknown>\n#21 0x5f169eb1c87f <unknown>\n#22 0x5f169eb74728 <unknown>\n#23 0x5f169eb748fb <unknown>\n#24 0x5f169eb849b4 <unknown>\n#25 0x721c9ee94ac3 <unknown>",
+      "time" : {
+        "start" : 1717933805130,
+        "stop" : 1717933805571,
+        "duration" : 441
+      }
+    }, {
+      "uid" : "762bef18095460e0",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\n  (Session info: chrome=123.0.6312.105); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception\nStacktrace:\n#0 0x5f1f8eb60863 <unknown>\n#1 0x5f1f8e8568c6 <unknown>\n#2 0x5f1f8e85be75 <unknown>\n#3 0x5f1f8e85dbce <unknown>\n#4 0x5f1f8e85dc5c <unknown>\n#5 0x5f1f8e8a31c2 <unknown>\n#6 0x5f1f8e8963a1 <unknown>\n#7 0x5f1f8e8c35a2 <unknown>\n#8 0x5f1f8e895e98 <unknown>\n#9 0x5f1f8e8c376e <unknown>\n#10 0x5f1f8e8e1c19 <unknown>\n#11 0x5f1f8e8c3343 <unknown>\n#12 0x5f1f8e894593 <unknown>\n#13 0x5f1f8e894f5e <unknown>\n#14 0x5f1f8eb2484b <unknown>\n#15 0x5f1f8eb287a5 <unknown>\n#16 0x5f1f8eb12571 <unknown>\n#17 0x5f1f8eb29332 <unknown>\n#18 0x5f1f8eaf787f <unknown>\n#19 0x5f1f8eb4f728 <unknown>\n#20 0x5f1f8eb4f8fb <unknown>\n#21 0x5f1f8eb5f9b4 <unknown>\n#22 0x7a15e2494ac3 <unknown>",
+      "time" : {
+        "start" : 1717855392830,
+        "stop" : 1717855410497,
+        "duration" : 17667
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "32dc65fb336474ec.json",
+  "parameterValues" : [ ]
+}

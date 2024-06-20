@@ -1,0 +1,856 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "Ubuntu",
+    "children" : [ {
+      "name" : "75075-MainThread",
+      "children" : [ {
+        "name" : "Смена валюты",
+        "uid" : "4eeaf8b18f0ab741",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649096662,
+          "stop" : 1718649100431,
+          "duration" : 3769
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Добавление товара в корзину",
+        "uid" : "524e5b9a2a1d2aed",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718649031560,
+          "stop" : 1718649034756,
+          "duration" : 3196
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Наличие элементов",
+        "uid" : "8d7d9ed06f9e9d6",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649015536,
+          "stop" : 1718649020128,
+          "duration" : 4592
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Регистрация",
+        "uid" : "9ecb84a76cbac420",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718649078449,
+          "stop" : 1718649093242,
+          "duration" : 14793
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - главная страница",
+        "uid" : "936a89df306d3565",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649038404,
+          "stop" : 1718649041061,
+          "duration" : 2657
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - каталог",
+        "uid" : "752d1c4ae1ff7ad",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649045016,
+          "stop" : 1718649047214,
+          "duration" : 2198
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Создать товар",
+        "uid" : "709752266e551226",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649050927,
+          "stop" : 1718649062705,
+          "duration" : 11778
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Авторизация (админка)",
+        "uid" : "ed38d7df23887c38",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649023596,
+          "stop" : 1718649027623,
+          "duration" : 4027
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Удалить товар",
+        "uid" : "36c61d41805bdc54",
+        "parentUid" : "1788f25040000566ab2f958531f25929",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718649066732,
+          "stop" : 1718649074893,
+          "duration" : 8161
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1788f25040000566ab2f958531f25929"
+    }, {
+      "name" : "18087-MainThread",
+      "children" : [ {
+        "name" : "Добавление товара в корзину",
+        "uid" : "e6222161bf8101f2",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902063992,
+          "stop" : 1718902069593,
+          "duration" : 5601
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты",
+        "uid" : "7575924255388c96",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902191403,
+          "stop" : 1718902199670,
+          "duration" : 8267
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Авторизация (админка)",
+        "uid" : "e6882fe60c99b3ab",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902042153,
+          "stop" : 1718902056558,
+          "duration" : 14405
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Регистрация",
+        "uid" : "de68b69a8bef7ddd",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718902164710,
+          "stop" : 1718902186651,
+          "duration" : 21941
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - главная страница",
+        "uid" : "aa2666c6390eaecf",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902075674,
+          "stop" : 1718902084071,
+          "duration" : 8397
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Удалить товар",
+        "uid" : "32dc65fb336474ec",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902138982,
+          "stop" : 1718902158266,
+          "duration" : 19284
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - каталог",
+        "uid" : "b04df85a8700922b",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902090533,
+          "stop" : 1718902098188,
+          "duration" : 7655
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Создать товар",
+        "uid" : "6b7598b0d5ddd0e2",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902103377,
+          "stop" : 1718902132333,
+          "duration" : 28956
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Наличие элементов",
+        "uid" : "335437235259d05a",
+        "parentUid" : "10d0ec52207df3247ef16f5d98e41e4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1718902017696,
+          "stop" : 1718902036769,
+          "duration" : 19073
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "10d0ec52207df3247ef16f5d98e41e4c"
+    }, {
+      "name" : "11565-MainThread",
+      "children" : [ {
+        "name" : "test_elements",
+        "uid" : "739bbaecf862dee3",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934865189,
+          "stop" : 1717934869354,
+          "duration" : 4165
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_user_registration",
+        "uid" : "d88e468247a548f9",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717934928258,
+          "stop" : 1717934942950,
+          "duration" : 14692
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_delete_product",
+        "uid" : "b6111bebb10e95cb",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934916525,
+          "stop" : 1717934924477,
+          "duration" : 7952
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_to_cart",
+        "uid" : "2048072adec80e5",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717934880580,
+          "stop" : 1717934884074,
+          "duration" : 3494
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_product",
+        "uid" : "c17345024d5df64",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934898955,
+          "stop" : 1717934912298,
+          "duration" : 13343
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_currency_change_catalog",
+        "uid" : "15b0304aa504dbbb",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934892975,
+          "stop" : 1717934895439,
+          "duration" : 2464
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_admin_login",
+        "uid" : "433b8dba925c970b",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934872567,
+          "stop" : 1717934877093,
+          "duration" : 4526
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_currency_change_home",
+        "uid" : "c160b439af4de545",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934887131,
+          "stop" : 1717934889437,
+          "duration" : 2306
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_change_currency",
+        "uid" : "a3460300b2d9193",
+        "parentUid" : "b4dcc969b577942bf07b2cdf28918f7f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717934946432,
+          "stop" : 1717934950912,
+          "duration" : 4480
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b4dcc969b577942bf07b2cdf28918f7f"
+    }, {
+      "name" : "5808-MainThread",
+      "children" : [ {
+        "name" : "test_user_registration",
+        "uid" : "6e7e1c9292b3ecb5",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933809588,
+          "stop" : 1717933810370,
+          "duration" : 782
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_product",
+        "uid" : "b15815c8b7454b69",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933801030,
+          "stop" : 1717933801804,
+          "duration" : 774
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_currency_change_home",
+        "uid" : "edadfd7f130ea966",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933792485,
+          "stop" : 1717933793334,
+          "duration" : 849
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_delete_product",
+        "uid" : "96cb46d8fc4e03de",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933805130,
+          "stop" : 1717933805571,
+          "duration" : 441
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_elements",
+        "uid" : "89aef095af7e1223",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933780337,
+          "stop" : 1717933781135,
+          "duration" : 798
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_to_cart",
+        "uid" : "6337b253c0bb5fbc",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933788449,
+          "stop" : 1717933788947,
+          "duration" : 498
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_currency_change_catalog",
+        "uid" : "6ec15a6042e51149",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933796748,
+          "stop" : 1717933797287,
+          "duration" : 539
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_change_currency",
+        "uid" : "7e2fd696142860c9",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933813836,
+          "stop" : 1717933814590,
+          "duration" : 754
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_admin_login",
+        "uid" : "46860c14331b3fa8",
+        "parentUid" : "f239a68d6c7ce15a40ce2055eb644ff6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717933784500,
+          "stop" : 1717933784942,
+          "duration" : 442
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f239a68d6c7ce15a40ce2055eb644ff6"
+    }, {
+      "name" : "93208-MainThread",
+      "children" : [ {
+        "name" : "Удалить товар",
+        "uid" : "504521ed0d06f22c",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696618008,
+          "stop" : 1718696618008,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Добавление товара в корзину",
+        "uid" : "3f5b7dc76a599abc",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696617327,
+          "stop" : 1718696617327,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Создать товар",
+        "uid" : "f8d81219d64b06ce",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696617798,
+          "stop" : 1718696617798,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - каталог",
+        "uid" : "b5f918dff0274ebf",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696617643,
+          "stop" : 1718696617643,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Авторизация (админка)",
+        "uid" : "94097b5949cb24ec",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696617140,
+          "stop" : 1718696617140,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты",
+        "uid" : "52623b74271300b6",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696618338,
+          "stop" : 1718696618338,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Регистрация",
+        "uid" : "7c4a953896b5b409",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696618176,
+          "stop" : 1718696618176,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Наличие элементов",
+        "uid" : "87fee853fc94f455",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696616937,
+          "stop" : 1718696616937,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - главная страница",
+        "uid" : "6d06ed06cfe51d61",
+        "parentUid" : "34b41cf7cdc36bab32df341e1795ac29",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696617478,
+          "stop" : 1718696617478,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "34b41cf7cdc36bab32df341e1795ac29"
+    }, {
+      "name" : "20885-MainThread",
+      "children" : [ {
+        "name" : "test_elements",
+        "uid" : "d02b58deb7463165",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855324313,
+          "stop" : 1717855332121,
+          "duration" : 7808
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_delete_product",
+        "uid" : "762bef18095460e0",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717855392830,
+          "stop" : 1717855410497,
+          "duration" : 17667
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_change_currency",
+        "uid" : "d678b60d591db906",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855443916,
+          "stop" : 1717855451588,
+          "duration" : 7672
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_currency_change_home",
+        "uid" : "93a141b656209356",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855353745,
+          "stop" : 1717855357093,
+          "duration" : 3348
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_to_cart",
+        "uid" : "eeaf5d36df9c6c7f",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1717855346626,
+          "stop" : 1717855349610,
+          "duration" : 2984
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_currency_change_catalog",
+        "uid" : "798a7359bc7dedfe",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855363933,
+          "stop" : 1717855370215,
+          "duration" : 6282
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_add_product",
+        "uid" : "f43bc56ffe253b9e",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855373845,
+          "stop" : 1717855389478,
+          "duration" : 15633
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_admin_login",
+        "uid" : "c5164eb68c516063",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855337420,
+          "stop" : 1717855342681,
+          "duration" : 5261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_user_registration",
+        "uid" : "44e2c2f1bcf1d099",
+        "parentUid" : "a257aea2b1f1d843134c79760e19f8d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1717855414800,
+          "stop" : 1717855438714,
+          "duration" : 23914
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a257aea2b1f1d843134c79760e19f8d7"
+    }, {
+      "name" : "92388-MainThread",
+      "children" : [ {
+        "name" : "Наличие элементов",
+        "uid" : "ab3d8e25c6eb70e9",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696483321,
+          "stop" : 1718696483321,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Добавление товара в корзину",
+        "uid" : "f4f375ec6c45d545",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696487504,
+          "stop" : 1718696487504,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - главная страница",
+        "uid" : "9bf6e7e59974123f",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696487674,
+          "stop" : 1718696487674,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты - каталог",
+        "uid" : "5972db3f027fcd01",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696488013,
+          "stop" : 1718696488013,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Смена валюты",
+        "uid" : "8195f70da2d7ed78",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696488747,
+          "stop" : 1718696488747,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Удалить товар",
+        "uid" : "6f673e109d1bcb81",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696488425,
+          "stop" : 1718696488425,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Создать товар",
+        "uid" : "1947a7287033575f",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696488271,
+          "stop" : 1718696488271,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Регистрация",
+        "uid" : "53496384adf3fd24",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696488599,
+          "stop" : 1718696488599,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Авторизация (админка)",
+        "uid" : "8327b8fcebd32922",
+        "parentUid" : "bf87908a4d476a8efc64cdc7426626d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1718696487350,
+          "stop" : 1718696487350,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bf87908a4d476a8efc64cdc7426626d8"
+    } ],
+    "uid" : "e11692fd470edf83881edd71a82e3fc4"
+  } ],
+  "name" : "timeline"
+}

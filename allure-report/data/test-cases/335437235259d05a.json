@@ -1,0 +1,155 @@
+{
+  "uid" : "335437235259d05a",
+  "name" : "Наличие элементов",
+  "fullName" : "tests.test_start#test_elements",
+  "historyId" : "1bec7b78e404943e29c95d0d988030ca",
+  "time" : {
+    "start" : 1718902017696,
+    "stop" : 1718902036769,
+    "duration" : 19073
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1718902017695,
+      "stop" : 1718902017695,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "browser",
+    "time" : {
+      "start" : 1718902013674,
+      "stop" : 1718902017695,
+      "duration" : 4021
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "d027ffcace70b743",
+      "name" : "48f49d0c40af97d4ed6969909ca6df92",
+      "source" : "d027ffcace70b743.json",
+      "type" : "application/json",
+      "size" : 965
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1718902036770,
+      "stop" : 1718902037189,
+      "duration" : 419
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "Ubuntu"
+  }, {
+    "name" : "thread",
+    "value" : "18087-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "87fee853fc94f455",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nStacktrace:\n#0 0x63369f5bc863 <unknown>\n#1 0x63369f2b28c6 <unknown>\n#2 0x63369f2e6d34 <unknown>\n#3 0x63369f2e2d3d <unknown>\n#4 0x63369f32baed <unknown>\n#5 0x63369f31f343 <unknown>\n#6 0x63369f2f0593 <unknown>\n#7 0x63369f2f0f5e <unknown>\n#8 0x63369f58084b <unknown>\n#9 0x63369f5847a5 <unknown>\n#10 0x63369f56e571 <unknown>\n#11 0x63369f585332 <unknown>\n#12 0x63369f55387f <unknown>\n#13 0x63369f5ab728 <unknown>\n#14 0x63369f5ab8fb <unknown>\n#15 0x63369f5bb9b4 <unknown>\n#16 0x745e14c94ac3 <unknown>",
+      "time" : {
+        "start" : 1718696616937,
+        "stop" : 1718696616937,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "ab3d8e25c6eb70e9",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.\n  (session not created: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nStacktrace:\n#0 0x5adbab2ab863 <unknown>\n#1 0x5adbaafa18c6 <unknown>\n#2 0x5adbaafd5d34 <unknown>\n#3 0x5adbaafd1d3d <unknown>\n#4 0x5adbab01aaed <unknown>\n#5 0x5adbab00e343 <unknown>\n#6 0x5adbaafdf593 <unknown>\n#7 0x5adbaafdff5e <unknown>\n#8 0x5adbab26f84b <unknown>\n#9 0x5adbab2737a5 <unknown>\n#10 0x5adbab25d571 <unknown>\n#11 0x5adbab274332 <unknown>\n#12 0x5adbab24287f <unknown>\n#13 0x5adbab29a728 <unknown>\n#14 0x5adbab29a8fb <unknown>\n#15 0x5adbab2aa9b4 <unknown>\n#16 0x7b0e65094ac3 <unknown>",
+      "time" : {
+        "start" : 1718696483321,
+        "stop" : 1718696483321,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8d7d9ed06f9e9d6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1718649015536,
+        "stop" : 1718649020128,
+        "duration" : 4592
+      }
+    }, {
+      "uid" : "739bbaecf862dee3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1717934865189,
+        "stop" : 1717934869354,
+        "duration" : 4165
+      }
+    }, {
+      "uid" : "89aef095af7e1223",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: chrome=123.0.6312.105)\nStacktrace:\n#0 0x614dae3d2863 <unknown>\n#1 0x614dae0c88c6 <unknown>\n#2 0x614dae0c09f3 <unknown>\n#3 0x614dae0b0b2b <unknown>\n#4 0x614dae0b20c2 <unknown>\n#5 0x614dae0b0e4c <unknown>\n#6 0x614dae0b0638 <unknown>\n#7 0x614dae0b0485 <unknown>\n#8 0x614dae0ae516 <unknown>\n#9 0x614dae0aea2a <unknown>\n#10 0x614dae0cb24e <unknown>\n#11 0x614dae1547c5 <unknown>\n#12 0x614dae1355a2 <unknown>\n#13 0x614dae153c19 <unknown>\n#14 0x614dae135343 <unknown>\n#15 0x614dae106593 <unknown>\n#16 0x614dae106f5e <unknown>\n#17 0x614dae39684b <unknown>\n#18 0x614dae39a7a5 <unknown>\n#19 0x614dae384571 <unknown>\n#20 0x614dae39b332 <unknown>\n#21 0x614dae36987f <unknown>\n#22 0x614dae3c1728 <unknown>\n#23 0x614dae3c18fb <unknown>\n#24 0x614dae3d19b4 <unknown>\n#25 0x785398094ac3 <unknown>",
+      "time" : {
+        "start" : 1717933780337,
+        "stop" : 1717933781135,
+        "duration" : 798
+      }
+    }, {
+      "uid" : "d02b58deb7463165",
+      "status" : "passed",
+      "time" : {
+        "start" : 1717855324313,
+        "stop" : 1717855332121,
+        "duration" : 7808
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "335437235259d05a.json",
+  "parameterValues" : [ ]
+}
