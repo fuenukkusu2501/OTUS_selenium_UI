@@ -5,6 +5,9 @@ from page_objects.home_page import HomePage
 from page_objects.header_element import HeaderElement
 from page_objects.catalog_page import CatalogPage
 from page_objects.registration_page import RegistrationPage
+import logging
+
+logger = logging.getLogger(__name__)
 
 @allure.title("Наличие элементов")
 def test_elements(browser, base_url):

@@ -1,90 +1,90 @@
 [ {
-  "uid" : "e6882fe60c99b3ab",
-  "name" : "Авторизация (админка)",
-  "time" : {
-    "start" : 1718902042153,
-    "stop" : 1718902056558,
-    "duration" : 14405
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "32dc65fb336474ec",
-  "name" : "Удалить товар",
-  "time" : {
-    "start" : 1718902138982,
-    "stop" : 1718902158266,
-    "duration" : 19284
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "335437235259d05a",
-  "name" : "Наличие элементов",
-  "time" : {
-    "start" : 1718902017696,
-    "stop" : 1718902036769,
-    "duration" : 19073
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "7575924255388c96",
-  "name" : "Смена валюты",
-  "time" : {
-    "start" : 1718902191403,
-    "stop" : 1718902199670,
-    "duration" : 8267
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "e6222161bf8101f2",
-  "name" : "Добавление товара в корзину",
-  "time" : {
-    "start" : 1718902063992,
-    "stop" : 1718902069593,
-    "duration" : 5601
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "6b7598b0d5ddd0e2",
-  "name" : "Создать товар",
-  "time" : {
-    "start" : 1718902103377,
-    "stop" : 1718902132333,
-    "duration" : 28956
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b04df85a8700922b",
-  "name" : "Смена валюты - каталог",
-  "time" : {
-    "start" : 1718902090533,
-    "stop" : 1718902098188,
-    "duration" : 7655
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "de68b69a8bef7ddd",
+  "uid" : "d602fd9bdacc2c8c",
   "name" : "Регистрация",
   "time" : {
-    "start" : 1718902164710,
-    "stop" : 1718902186651,
-    "duration" : 21941
+    "start" : 1719670379398,
+    "stop" : 1719670396368,
+    "duration" : 16970
   },
   "status" : "broken",
   "severity" : "normal"
 }, {
-  "uid" : "aa2666c6390eaecf",
+  "uid" : "e2e81e17d83fa7e7",
+  "name" : "Добавление товара в корзину",
+  "time" : {
+    "start" : 1719670316031,
+    "stop" : 1719670319722,
+    "duration" : 3691
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e3a9868369abd0bc",
+  "name" : "Смена валюты - каталог",
+  "time" : {
+    "start" : 1719670331652,
+    "stop" : 1719670334943,
+    "duration" : 3291
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8cdd46a7bf1d41da",
+  "name" : "Смена валюты",
+  "time" : {
+    "start" : 1719670400490,
+    "stop" : 1719670405829,
+    "duration" : 5339
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6ffca7509a1b297",
+  "name" : "Удалить товар",
+  "time" : {
+    "start" : 1719670364364,
+    "stop" : 1719670375507,
+    "duration" : 11143
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2805535cafc6f1ea",
   "name" : "Смена валюты - главная страница",
   "time" : {
-    "start" : 1718902075674,
-    "stop" : 1718902084071,
-    "duration" : 8397
+    "start" : 1719670324117,
+    "stop" : 1719670328175,
+    "duration" : 4058
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aa53cc0c6f540505",
+  "name" : "Наличие элементов",
+  "time" : {
+    "start" : 1719670292263,
+    "stop" : 1719670301247,
+    "duration" : 8984
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fd17067eca78b8d6",
+  "name" : "Создать товар",
+  "time" : {
+    "start" : 1719670338476,
+    "stop" : 1719670359950,
+    "duration" : 21474
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dcc50f8583fdeda5",
+  "name" : "Авторизация (админка)",
+  "time" : {
+    "start" : 1719670306247,
+    "stop" : 1719670311914,
+    "duration" : 5667
   },
   "status" : "passed",
   "severity" : "normal"
