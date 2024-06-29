@@ -1,4 +1,8 @@
 import pytest
+import logging
+import allure
+import json
+import os
 from pytest import fixture
 
 from selenium import webdriver
@@ -22,6 +26,15 @@ def pytest_addoption(parser):
         "--url", default="http://10.0.2.15:8081"
     )
 
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+# https://github.com/pytest-dev/pytest/issues/230#issuecomment-402580536
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    if rep.outcome != 'passed':
+        item.status = 'failed'
+    else:
+        item.status = 'passed'
 
 @pytest.fixture()
 def browser(request):
@@ -52,7 +65,27 @@ def browser(request):
     browser.set_window_size(1920, 1080)
     # так же можно использовать browser.maximize_window()
 
+    allure.attach(
+        name=browser.session_id,
+        body=json.dumps(browser.capabilities, indent=4, ensure_ascii=False),
+        attachment_type=allure.attachment_type.JSON)
+
+    browser.test_name = request.node.name
+    browser.log_level = logging.DEBUG
+
     yield browser
+
+    if request.node.status == "failed":
+        allure.attach(
+            name="failure_screenshot",
+            body=browser.get_screenshot_as_png(),
+            attachment_type=allure.attachment_type.PNG
+        )
+        allure.attach(
+            name="page_source",
+            body=browser.page_source,
+            attachment_type=allure.attachment_type.HTML
+        )
 
     browser.close()
 
@@ -61,3 +94,5 @@ def browser(request):
 def base_url(request):
     url = request.config.getoption('--url')
     return url
+
+
