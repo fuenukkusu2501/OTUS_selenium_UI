@@ -6,13 +6,13 @@
       "name" : "selenium.common.exceptions.TimeoutException: Message:",
       "children" : [ {
         "name" : "Регистрация",
-        "uid" : "d602fd9bdacc2c8c",
+        "uid" : "98eb7990d917bb46",
         "parentUid" : "31bb78a6a95ede3f78b260ed048910d8",
         "status" : "broken",
         "time" : {
-          "start" : 1719670379398,
-          "stop" : 1719670396368,
-          "duration" : 16970
+          "start" : 1720461480664,
+          "stop" : 1720461497753,
+          "duration" : 17089
         },
         "flaky" : false,
         "newFailed" : false,
