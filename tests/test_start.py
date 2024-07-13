@@ -1,11 +1,15 @@
+import allure
 from selenium.webdriver.common.by import By
 from page_objects.admin_page import AdminPage
 from page_objects.home_page import HomePage
 from page_objects.header_element import HeaderElement
 from page_objects.catalog_page import CatalogPage
 from page_objects.registration_page import RegistrationPage
+import logging
 
+logger = logging.getLogger(__name__)
 
+@allure.title("Наличие элементов")
 def test_elements(browser, base_url):
     browser.get(base_url)
     assert browser.title == "Your Store"
@@ -38,8 +42,9 @@ def test_elements(browser, base_url):
     assert browser.find_elements(By.CSS_SELECTOR, ".fa-solid.fa-lock")[0]
     assert browser.find_elements(By.CSS_SELECTOR, ".fa-solid.fa-lock")[1]
     assert browser.find_element(By.CSS_SELECTOR, ".card-body")
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Авторизация (админка)")
 def test_admin_login(browser, base_url):
     admin_page = AdminPage(browser)
     admin_page.open(base_url)
@@ -47,8 +52,9 @@ def test_admin_login(browser, base_url):
     assert admin_page.title_username() == "user"
     assert admin_page.alt_username() == "John Doe"
     assert browser.current_url.__contains__(base_url)
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Добавление товара в корзину")
 def test_add_to_cart(browser, base_url):
     home_page = HomePage(browser)
     home_page.open(base_url)
@@ -59,8 +65,9 @@ def test_add_to_cart(browser, base_url):
     home_page.click_cart_button()
     product_name_cart = home_page.get_product_name_cart()
     assert product_name_listing == product_name_cart
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Смена валюты - главная страница")
 def test_currency_change_home(browser, base_url):
     home_page = HomePage(browser)
     header = HeaderElement(browser)
@@ -70,8 +77,9 @@ def test_currency_change_home(browser, base_url):
     price = home_page.get_price_value()
     assert price.__contains__("€")
     assert not price.__contains__("$")
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Смена валюты - каталог")
 def test_currency_change_catalog(browser, base_url):
     catalog_page = CatalogPage(browser)
     header = HeaderElement(browser)
@@ -81,8 +89,9 @@ def test_currency_change_catalog(browser, base_url):
     price = HomePage(browser).get_price_value()
     assert price.__contains__("€")
     assert not price.__contains__("$")
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Создать товар")
 def test_add_product(browser, base_url):
     admin_page = AdminPage(browser)
     admin_page.open(base_url)
@@ -98,8 +107,9 @@ def test_add_product(browser, base_url):
     admin_page.add_seo_name("12345")
     admin_page.save_product()
     admin_page.find_popup_success()
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Удалить товар")
 def test_delete_product(browser, base_url):
     admin_page = AdminPage(browser)
     admin_page.open(base_url)
@@ -112,8 +122,9 @@ def test_delete_product(browser, base_url):
     HomePage(browser).scroll_up()
     admin_page.delete_product()
     admin_page.find_popup_success()
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Регистрация")
 def test_user_registration(browser, base_url):
     registration_page = RegistrationPage(browser)
     registration_page.open(base_url)
@@ -122,8 +133,9 @@ def test_user_registration(browser, base_url):
     registration_page.complete_registration()
     title_text = registration_page.get_title_text()
     assert title_text == "Your Account Has Been Created!"
+    logger.warning("THIS IS FROM LOG!")
 
-
+@allure.title("Смена валюты")
 def test_change_currency(browser, base_url):
     header = HeaderElement(browser)
     HomePage(browser).open(base_url)
@@ -139,3 +151,4 @@ def test_change_currency(browser, base_url):
     header.select_dollar()
     currency_icon = header.get_currency_icon()
     assert currency_icon == "$"
+    logger.warning("THIS IS FROM LOG!")

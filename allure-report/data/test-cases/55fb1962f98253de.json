@@ -1,0 +1,102 @@
+{
+  "uid" : "55fb1962f98253de",
+  "name" : "Наличие элементов",
+  "fullName" : "tests.test_start#test_elements",
+  "historyId" : "1bec7b78e404943e29c95d0d988030ca",
+  "time" : {
+    "start" : 1719669797876,
+    "stop" : 1719669807165,
+    "duration" : 9289
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1719669791843,
+      "stop" : 1719669797870,
+      "duration" : 6027
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e1b28480981d146f",
+      "name" : "8f303f29829234e8f151df18aa110098",
+      "source" : "e1b28480981d146f.json",
+      "type" : "application/json",
+      "size" : 965
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1719669797870,
+      "stop" : 1719669797870,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1719669807170,
+      "stop" : 1719669807366,
+      "duration" : 196
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "Ubuntu"
+  }, {
+    "name" : "thread",
+    "value" : "6609-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "55fb1962f98253de.json",
+  "parameterValues" : [ ]
+}
