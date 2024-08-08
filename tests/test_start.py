@@ -8,7 +8,6 @@ from page_objects.registration_page import RegistrationPage
 import logging
 
 logger = logging.getLogger(__name__)
-
 @allure.title("Наличие элементов")
 def test_elements(browser, base_url):
     browser.get(base_url)

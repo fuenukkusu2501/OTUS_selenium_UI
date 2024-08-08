@@ -1,0 +1,343 @@
+{
+  "uid" : "c28b9d0ec8f676f1",
+  "name" : "Создать товар",
+  "fullName" : "tests.test_start#test_add_product",
+  "historyId" : "605f1327e44636668481b9c4c06efda9",
+  "time" : {
+    "start" : 1723034423009,
+    "stop" : 1723034432485,
+    "duration" : 9476
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x5ed71c80cc5a <unknown>\n#1 0x5ed71c4efe2c <unknown>\n#2 0x5ed71c53c661 <unknown>\n#3 0x5ed71c53c751 <unknown>\n#4 0x5ed71c580f64 <unknown>\n#5 0x5ed71c55f5ed <unknown>\n#6 0x5ed71c57e303 <unknown>\n#7 0x5ed71c55f363 <unknown>\n#8 0x5ed71c52f247 <unknown>\n#9 0x5ed71c52fb9e <unknown>\n#10 0x5ed71c7d322b <unknown>\n#11 0x5ed71c7d72d1 <unknown>\n#12 0x5ed71c7beade <unknown>\n#13 0x5ed71c7d7e32 <unknown>\n#14 0x5ed71c7a377f <unknown>\n#15 0x5ed71c7fc618 <unknown>\n#16 0x5ed71c7fc7f0 <unknown>\n#17 0x5ed71c80bd8c <unknown>\n#18 0x72f3b6294ac3 <unknown>",
+  "statusTrace" : "browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"8eabc33846d865901599e08c17a577ad\")>, base_url = 'http://10.0.2.15:8081'\n\n    @allure.title(\"Создать товар\")\n    def test_add_product(browser, base_url):\n        admin_page = AdminPage(browser)\n        admin_page.open(base_url)\n        admin_page.login(\"user\", \"bitnami\")\n        admin_page.select_catalog()\n        admin_page.select_products()\n        admin_page.add_product()\n        admin_page.add_product_name(\"test item\")\n        admin_page.add_meta_tag(\"test\")\n        admin_page.select_data_tab()\n        admin_page.add_model(\"12345\")\n        admin_page.select_seo_tab()\n        admin_page.add_seo_name(\"12345\")\n        admin_page.save_product()\n>       admin_page.find_popup_success()\n\ntests/test_start.py:108: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\npage_objects/admin_page.py:119: in find_popup_success\n    self.get_element(self.POPUP_SUCCESS)\npage_objects/base_page.py:30: in get_element\n    return WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located(locator))\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"8eabc33846d865901599e08c17a577ad\")>, method = <function visibility_of_element_located.<locals>._predicate at 0x780623201870>, message = ''\n\n    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = \"\") -> T:\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value does not evaluate to ``False``.\n    \n        :param method: callable(WebDriver)\n        :param message: optional message for :exc:`TimeoutException`\n        :returns: the result of the last call to `method`\n        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            time.sleep(self._poll)\n            if time.monotonic() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message: \nE       Stacktrace:\nE       #0 0x5ed71c80cc5a <unknown>\nE       #1 0x5ed71c4efe2c <unknown>\nE       #2 0x5ed71c53c661 <unknown>\nE       #3 0x5ed71c53c751 <unknown>\nE       #4 0x5ed71c580f64 <unknown>\nE       #5 0x5ed71c55f5ed <unknown>\nE       #6 0x5ed71c57e303 <unknown>\nE       #7 0x5ed71c55f363 <unknown>\nE       #8 0x5ed71c52f247 <unknown>\nE       #9 0x5ed71c52fb9e <unknown>\nE       #10 0x5ed71c7d322b <unknown>\nE       #11 0x5ed71c7d72d1 <unknown>\nE       #12 0x5ed71c7beade <unknown>\nE       #13 0x5ed71c7d7e32 <unknown>\nE       #14 0x5ed71c7a377f <unknown>\nE       #15 0x5ed71c7fc618 <unknown>\nE       #16 0x5ed71c7fc7f0 <unknown>\nE       #17 0x5ed71c80bd8c <unknown>\nE       #18 0x72f3b6294ac3 <unknown>\n\n/usr/local/lib/python3.10/dist-packages/selenium/webdriver/support/wait.py:105: TimeoutException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1723034420478,
+      "stop" : 1723034423008,
+      "duration" : 2530
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7463ba51c24d238c",
+      "name" : "8eabc33846d865901599e08c17a577ad",
+      "source" : "7463ba51c24d238c.json",
+      "type" : "application/json",
+      "size" : 966
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1723034423008,
+      "stop" : 1723034423009,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x5ed71c80cc5a <unknown>\n#1 0x5ed71c4efe2c <unknown>\n#2 0x5ed71c53c661 <unknown>\n#3 0x5ed71c53c751 <unknown>\n#4 0x5ed71c580f64 <unknown>\n#5 0x5ed71c55f5ed <unknown>\n#6 0x5ed71c57e303 <unknown>\n#7 0x5ed71c55f363 <unknown>\n#8 0x5ed71c52f247 <unknown>\n#9 0x5ed71c52fb9e <unknown>\n#10 0x5ed71c7d322b <unknown>\n#11 0x5ed71c7d72d1 <unknown>\n#12 0x5ed71c7beade <unknown>\n#13 0x5ed71c7d7e32 <unknown>\n#14 0x5ed71c7a377f <unknown>\n#15 0x5ed71c7fc618 <unknown>\n#16 0x5ed71c7fc7f0 <unknown>\n#17 0x5ed71c80bd8c <unknown>\n#18 0x72f3b6294ac3 <unknown>",
+    "statusTrace" : "browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"8eabc33846d865901599e08c17a577ad\")>, base_url = 'http://10.0.2.15:8081'\n\n    @allure.title(\"Создать товар\")\n    def test_add_product(browser, base_url):\n        admin_page = AdminPage(browser)\n        admin_page.open(base_url)\n        admin_page.login(\"user\", \"bitnami\")\n        admin_page.select_catalog()\n        admin_page.select_products()\n        admin_page.add_product()\n        admin_page.add_product_name(\"test item\")\n        admin_page.add_meta_tag(\"test\")\n        admin_page.select_data_tab()\n        admin_page.add_model(\"12345\")\n        admin_page.select_seo_tab()\n        admin_page.add_seo_name(\"12345\")\n        admin_page.save_product()\n>       admin_page.find_popup_success()\n\ntests/test_start.py:108: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\npage_objects/admin_page.py:119: in find_popup_success\n    self.get_element(self.POPUP_SUCCESS)\npage_objects/base_page.py:30: in get_element\n    return WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located(locator))\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"8eabc33846d865901599e08c17a577ad\")>, method = <function visibility_of_element_located.<locals>._predicate at 0x780623201870>, message = ''\n\n    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = \"\") -> T:\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value does not evaluate to ``False``.\n    \n        :param method: callable(WebDriver)\n        :param message: optional message for :exc:`TimeoutException`\n        :returns: the result of the last call to `method`\n        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            time.sleep(self._poll)\n            if time.monotonic() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message: \nE       Stacktrace:\nE       #0 0x5ed71c80cc5a <unknown>\nE       #1 0x5ed71c4efe2c <unknown>\nE       #2 0x5ed71c53c661 <unknown>\nE       #3 0x5ed71c53c751 <unknown>\nE       #4 0x5ed71c580f64 <unknown>\nE       #5 0x5ed71c55f5ed <unknown>\nE       #6 0x5ed71c57e303 <unknown>\nE       #7 0x5ed71c55f363 <unknown>\nE       #8 0x5ed71c52f247 <unknown>\nE       #9 0x5ed71c52fb9e <unknown>\nE       #10 0x5ed71c7d322b <unknown>\nE       #11 0x5ed71c7d72d1 <unknown>\nE       #12 0x5ed71c7beade <unknown>\nE       #13 0x5ed71c7d7e32 <unknown>\nE       #14 0x5ed71c7a377f <unknown>\nE       #15 0x5ed71c7fc618 <unknown>\nE       #16 0x5ed71c7fc7f0 <unknown>\nE       #17 0x5ed71c80bd8c <unknown>\nE       #18 0x72f3b6294ac3 <unknown>\n\n/usr/local/lib/python3.10/dist-packages/selenium/webdriver/support/wait.py:105: TimeoutException",
+    "steps" : [ {
+      "name" : "Открываю http://10.0.2.15:8081/administration",
+      "time" : {
+        "start" : 1723034423009,
+        "stop" : 1723034423483,
+        "duration" : 474
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Авторизую пользователя",
+      "time" : {
+        "start" : 1723034423483,
+        "stop" : 1723034424711,
+        "duration" : 1228
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "username",
+        "value" : "'user'"
+      }, {
+        "name" : "password",
+        "value" : "'bitnami'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Перехожу в меню Каталог",
+      "time" : {
+        "start" : 1723034424712,
+        "stop" : 1723034425307,
+        "duration" : 595
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Выбираю товар",
+      "time" : {
+        "start" : 1723034425307,
+        "stop" : 1723034426362,
+        "duration" : 1055
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Добавляю товар в корзину",
+      "time" : {
+        "start" : 1723034426362,
+        "stop" : 1723034426817,
+        "duration" : 455
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Получаю имя товара",
+      "time" : {
+        "start" : 1723034426817,
+        "stop" : 1723034427873,
+        "duration" : 1056
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "text",
+        "value" : "'test item'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Прописываю meta_tag",
+      "time" : {
+        "start" : 1723034427873,
+        "stop" : 1723034428211,
+        "duration" : 338
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "text",
+        "value" : "'test'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираю вкладку data",
+      "time" : {
+        "start" : 1723034428211,
+        "stop" : 1723034428297,
+        "duration" : 86
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Прописываю артикул",
+      "time" : {
+        "start" : 1723034428297,
+        "stop" : 1723034428691,
+        "duration" : 394
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "text",
+        "value" : "'12345'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираю вкладку SEO",
+      "time" : {
+        "start" : 1723034428691,
+        "stop" : 1723034428756,
+        "duration" : 65
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Прописываю имя SEO",
+      "time" : {
+        "start" : 1723034428756,
+        "stop" : 1723034429181,
+        "duration" : 425
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "text",
+        "value" : "'12345'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Сохраняю товар",
+      "time" : {
+        "start" : 1723034429181,
+        "stop" : 1723034429306,
+        "duration" : 125
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Ищу поп-ап",
+      "time" : {
+        "start" : 1723034429306,
+        "stop" : 1723034432484,
+        "duration" : 3178
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x5ed71c80cc5a <unknown>\n#1 0x5ed71c4efe2c <unknown>\n#2 0x5ed71c53c661 <unknown>\n#3 0x5ed71c53c751 <unknown>\n#4 0x5ed71c580f64 <unknown>\n#5 0x5ed71c55f5ed <unknown>\n#6 0x5ed71c57e303 <unknown>\n#7 0x5ed71c55f363 <unknown>\n#8 0x5ed71c52f247 <unknown>\n#9 0x5ed71c52fb9e <unknown>\n#10 0x5ed71c7d322b <unknown>\n#11 0x5ed71c7d72d1 <unknown>\n#12 0x5ed71c7beade <unknown>\n#13 0x5ed71c7d7e32 <unknown>\n#14 0x5ed71c7a377f <unknown>\n#15 0x5ed71c7fc618 <unknown>\n#16 0x5ed71c7fc7f0 <unknown>\n#17 0x5ed71c80bd8c <unknown>\n#18 0x72f3b6294ac3 <unknown>\n\n",
+      "statusTrace" : "  File \"/usr/local/lib/python3.10/dist-packages/allure_commons/_allure.py\", line 192, in impl\n    return func(*a, **kw)\n  File \"/home/fuenukkusu2501/Develop/tmp/OTUS_selenium_UI/page_objects/admin_page.py\", line 119, in find_popup_success\n    self.get_element(self.POPUP_SUCCESS)\n  File \"/home/fuenukkusu2501/Develop/tmp/OTUS_selenium_UI/page_objects/base_page.py\", line 30, in get_element\n    return WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located(locator))\n  File \"/usr/local/lib/python3.10/dist-packages/selenium/webdriver/support/wait.py\", line 105, in until\n    raise TimeoutException(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 13,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::finalizer",
+    "time" : {
+      "start" : 1723034432495,
+      "stop" : 1723034432912,
+      "duration" : 417
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ecee7506873031a3",
+      "name" : "failure_screenshot",
+      "source" : "ecee7506873031a3.png",
+      "type" : "image/png",
+      "size" : 85698
+    }, {
+      "uid" : "7ebfb2bcb48bf73c",
+      "name" : "page_source",
+      "source" : "7ebfb2bcb48bf73c.html",
+      "type" : "text/html",
+      "size" : 135323
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "Ubuntu"
+  }, {
+    "name" : "thread",
+    "value" : "308095-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c28b9d0ec8f676f1.json",
+  "parameterValues" : [ ]
+}
