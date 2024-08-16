@@ -1,1 +1,0 @@
-[33mWARNING [0m test_start:test_start.py:50 THIS IS FROM LOG!

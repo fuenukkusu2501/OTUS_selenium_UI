@@ -4,8 +4,8 @@ FROM python:3.12-alpine
 # Устанавка рабочего директория внутри контейнера
 # Директорий будет создан если его не было
 # Будет в дальнейшем использоваться как базовый
-WORKDIR /app
-
+# WORKDIR /app
+WORKDIR tests
 # Копирование зависимостей
 # Для того чтобы не пересобирать их каждый раз при сборке образа
 COPY requirements.txt .
@@ -16,6 +16,9 @@ RUN pip install -r requirements.txt
 
 # Копирование остальных файлов проекта
 COPY . .
+
+# Предоставление прав на выполнение
+RUN chmod +x wait-for-it.sh
 
 # # Копирование cm_linux_amd64 в контейнер
 # COPY cm_linux_amd64 /app/cm_linux_amd64
@@ -28,4 +31,4 @@ COPY . .
 # RUN ./app/cm_linux_amd64 selenoid-ui start
 
 # Запуск тестов
-ENTRYPOINT ["pytest"]
+CMD ["pytest"]
