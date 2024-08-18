@@ -20,6 +20,9 @@ COPY . .
 # Предоставление прав на выполнение
 RUN chmod +x wait-for-it.sh
 
+RUN apk update && apk add netcat-openbsd
+
+
 # # Копирование cm_linux_amd64 в контейнер
 # COPY cm_linux_amd64 /app/cm_linux_amd64
 #
@@ -31,4 +34,4 @@ RUN chmod +x wait-for-it.sh
 # RUN ./app/cm_linux_amd64 selenoid-ui start
 
 # Запуск тестов
-CMD ["pytest"]
+ENTRYPOINT ["pytest"]

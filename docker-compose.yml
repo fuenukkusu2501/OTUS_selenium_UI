@@ -40,19 +40,20 @@ services:
     depends_on:
       - mariadb
 
+
   tests:
     #    image: py_server_tests
     build:
       context: .
       dockerfile: Dockerfile
     #    command: pytest -v --url http://py_server_db:8080
-    command: ./wait-for-it.sh opencart 8080 -- pytest -v tests/test_start.py --url http://10.0.2.15:8081 --browser chrome --bv 127.0 --executor selenoid
+    command: ./wait-for-it.sh opencart 8081 -- pytest -v tests/test_start.py --url http://10.0.2.15:8081 --browser chrome --bv 127.0 --executor selenoid
     depends_on:
       #      - py_server_db
       - opencart
-#    networks:
-#      - test_net
-      
+  #    networks:
+  #      - test_net
+
 networks:
   default:
     name: selenoid
