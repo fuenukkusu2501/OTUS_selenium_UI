@@ -26,7 +26,7 @@ class BasePage:
         self.logger.info(f"Open {url}")
         self.browser.get(url)
 
-    def get_element(self, locator: tuple, timeout=3):
+    def get_element(self, locator: tuple, timeout=5):
         return WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located(locator))
 
     def get_elements(self, locator: tuple, timeout=3):

@@ -9,6 +9,8 @@ services:
       - PMA_USER=bn_opencart
     ports:
       - '${PHPADMIN_PORT}:80'
+    networks:
+      - selenoid
 
   mariadb:
     image: docker.io/bitnami/mariadb:11.2
@@ -20,12 +22,16 @@ services:
       - 'mariadb_data:/bitnami/mariadb'
     ports:
       - '3306:3306'
+    networks:
+      - selenoid
 
   opencart:
     image: docker.io/bitnami/opencart:4
     ports:
       - '${OPENCART_PORT}:8080'
       - '443:8443'
+    networks:
+      - selenoid
     environment:
       - OPENCART_HOST=${LOCAL_IP}:${OPENCART_PORT}
       - OPENCART_DATABASE_HOST=mariadb
@@ -41,22 +47,23 @@ services:
       - mariadb
 
 
+
   tests:
     #    image: py_server_tests
     build:
       context: .
       dockerfile: Dockerfile
-    #    command: pytest -v --url http://py_server_db:8080
-    command: ./wait-for-it.sh opencart 8081 -- pytest -v tests/test_start.py --url http://10.0.2.15:8081 --browser chrome --bv 127.0 --executor selenoid
     depends_on:
-      #      - py_server_db
-      - opencart
-  #    networks:
-  #      - test_net
+        - opencart
+    networks:
+        - selenoid
+    #    command: pytest -v --url http://py_server_db:8080
+    command: ./wait-for-it.sh opencart 8080 -- pytest -v tests/test_start.py --url http://10.0.2.15:8081 --browser chrome --bv 127.0 --vnc --executor selenoid
+
 
 networks:
-  default:
-    name: selenoid
+  selenoid:
+    driver: bridge
     external: true
 
 volumes:
