@@ -107,7 +107,7 @@ def browser(request):
                 "enableVNC": vnc,
                 "name": request.node.name,
             #     "screenResolution": "1280x2000",
-            #     "enableVideo": video,
+                "enableVideo": video,
             #     "enableLog": logs,
             #     "timeZone": "Europe/Moscow",
             #     "env": ["LANG=ru_RU.UTF-8", "LANGUAGE=ru:en", "LC_ALL=ru_RU.UTF-8"]

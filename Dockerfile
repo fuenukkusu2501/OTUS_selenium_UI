@@ -34,4 +34,4 @@ RUN apk update && apk add netcat-openbsd
 # RUN ./app/cm_linux_amd64 selenoid-ui start
 
 # Запуск тестов
-ENTRYPOINT ["pytest"]
+CMD ["pytest"]

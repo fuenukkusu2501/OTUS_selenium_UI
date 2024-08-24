@@ -58,7 +58,7 @@ services:
     networks:
         - selenoid
     #    command: pytest -v --url http://py_server_db:8080
-    command: ./wait-for-it.sh opencart 8080 -- pytest -v tests/test_start.py --url http://10.0.2.15:8081 --browser chrome --bv 127.0 --vnc --executor selenoid
+    command: ./wait-for-it.sh opencart 8080 -- pytest -v tests/test_start.py --url http://10.0.2.15:8081 --browser chrome --bv 127.0 --vnc --video --executor selenoid
 
 
 networks:

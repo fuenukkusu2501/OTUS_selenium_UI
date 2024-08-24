@@ -47,7 +47,7 @@ def test_elements(browser, base_url):
 def test_admin_login(browser, base_url):
     admin_page = AdminPage(browser)
     admin_page.open(base_url)
-    admin_page.login("user", "bitnami")
+    admin_page.login("user", "qwerty!123")
     assert admin_page.title_username() == "user"
     assert admin_page.alt_username() == "John Doe"
     assert browser.current_url.__contains__(base_url)
@@ -94,7 +94,7 @@ def test_currency_change_catalog(browser, base_url):
 def test_add_product(browser, base_url):
     admin_page = AdminPage(browser)
     admin_page.open(base_url)
-    admin_page.login("user", "bitnami")
+    admin_page.login("user", "qwerty!123")
     admin_page.select_catalog()
     admin_page.select_products()
     admin_page.add_product()
@@ -112,7 +112,7 @@ def test_add_product(browser, base_url):
 def test_delete_product(browser, base_url):
     admin_page = AdminPage(browser)
     admin_page.open(base_url)
-    admin_page.login("user", "bitnami")
+    admin_page.login("user", "qwerty!123")
     admin_page.select_catalog()
     admin_page.select_products()
     HomePage(browser).scroll_down()

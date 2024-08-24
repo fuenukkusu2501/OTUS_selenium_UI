@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 
+from conftest import browser
 
 
 class BasePage:
@@ -25,6 +26,10 @@ class BasePage:
     def _open(self, url):
         self.logger.info(f"Open {url}")
         self.browser.get(url)
+
+    def current_url(self):
+        current_url = self.browser.current_url
+        print("Current URL:", current_url)
 
     def get_element(self, locator: tuple, timeout=5):
         return WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located(locator))
