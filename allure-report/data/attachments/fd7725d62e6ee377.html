@@ -1,0 +1,708 @@
+<html dir="ltr" lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <base href="http://10.0.2.15:8081/administration/">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <link href="view/stylesheet/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="view/stylesheet/fonts/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="view/stylesheet/stylesheet.css" rel="stylesheet" type="text/css">
+  <script src="view/javascript/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="view/javascript/jquery/datetimepicker/moment.min.js"></script>
+  <script type="text/javascript" src="view/javascript/jquery/datetimepicker/moment-with-locales.min.js"></script>
+  <script type="text/javascript" src="view/javascript/jquery/datetimepicker/daterangepicker.js"></script>
+  <link href="view/javascript/jquery/datetimepicker/daterangepicker.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="view/javascript/common.js"></script>
+      </head>
+<body>
+<div id="container">
+  <div id="alert" class="toast-container position-fixed top-0 end-0 p-3"></div>
+  <header id="header" class="navbar navbar-expand navbar-light bg-light">
+    <div class="container-fluid">
+      <a href="http://10.0.2.15:8081/administration/index.php?route=common/dashboard&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" class="navbar-brand d-none d-lg-block"><img src="view/image/logo.png" alt="OpenCart" title="OpenCart"></a>
+              <button type="button" id="button-menu" class="btn btn-link d-inline-block d-lg-none"><i class="fa-solid fa-bars"></i></button>
+        <ul class="nav navbar-nav">
+          <li id="nav-notification" class="nav-item dropdown">
+            <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle"><i class="fa-regular fa-bell"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+                              <span class="dropdown-item text-center">No results!</span>
+                          </div>
+          </li>
+          <li id="nav-language" class="nav-item dropdown">      <a href="en-gb" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><img src="http://10.0.2.15:8081/catalog/language/en-gb/en-gb.png" alt="English" title="English"></a>
+  <ul class="dropdown-menu">
+      <li><a href="en-gb" class="dropdown-item"><img src="http://10.0.2.15:8081/catalog/language/en-gb/en-gb.png" alt="English" title="English"> English</a></li>
+  </ul>
+<input type="hidden" name="redirect" value="http://10.0.2.15:8081/administration/index.php?route=catalog/product&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" id="input-redirect">
+<script type="text/javascript"><!--
+$('#nav-language .dropdown-item').on('click', function (e) {
+    e.preventDefault();
+
+    var element = this;
+
+    $.ajax({
+        url: 'index.php?route=common/language.save&user_token=6935205f38ea79fbfe85a3f4c1449583',
+        type: 'post',
+        data: 'code=' + $(element).attr('href') + '&redirect=' + encodeURIComponent($('#input-redirect').val()),
+        dataType: 'json',
+        success: function (json) {
+            console.log($(element).attr('href'));
+            console.log($('input-redirect').val());
+
+            if (json['redirect']) {
+                location = json['redirect'];
+            }
+
+            if (json['error']) {
+                $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+    });
+});
+//--></script></li>
+          <li id="nav-profile" class="nav-item dropdown">
+            <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle"><img src="http://10.0.2.15:8081/image/cache/profile-45x45.png" alt="John Doe" title="user" class="rounded-circle"><span class="d-none d-md-inline d-lg-inline">&nbsp;&nbsp;&nbsp;John Doe <i class="fa-solid fa-caret-down fa-fw"></i></span></a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a href="http://10.0.2.15:8081/administration/index.php?route=user/profile&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" class="dropdown-item"><i class="fa-solid fa-user-circle fa-fw"></i> Your Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">Stores</h6></li>
+                              <a href="http://10.0.2.15:8081/" target="_blank" class="dropdown-item">Your Store</a>
+                            <li><hr class="dropdown-divider"></li>
+              <li><h6 class="dropdown-header">Help</h6></li>
+              <li><a href="https://www.opencart.com" target="_blank" class="dropdown-item"><i class="fa-brands fa-opencart fa-fw"></i> OpenCart Homepage</a></li>
+              <li><a href="http://docs.opencart.com" target="_blank" class="dropdown-item"><i class="fa-solid fa-file fa-fw"></i> Documentation</a></li>
+              <li><a href="https://forum.opencart.com" target="_blank" class="dropdown-item"><i class="fa-solid fa-comments fa-fw"></i> Support Forum</a></li>
+            </ul>
+          </li>
+          <li id="nav-logout" class="nav-item"><a href="http://10.0.2.15:8081/administration/index.php?route=common/logout&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" class="nav-link"><i class="fa-solid fa-sign-out"></i> <span class="d-none d-md-inline">Logout</span></a></li>
+        </ul>
+          </div>
+  </header>
+<nav id="column-left">
+	<div id="navigation"><span class="fa-solid fa-bars"></span> Navigation</div>
+	<ul id="menu" class="show">
+							<li id="menu-dashboard">
+									<a href="http://10.0.2.15:8081/administration/index.php?route=common/dashboard&amp;user_token=6935205f38ea79fbfe85a3f4c1449583"><i class="fas fa-home"></i> Dashboard</a>
+											</li>
+								<li id="menu-catalog" class="active">
+									<a href="#collapse-1" data-bs-toggle="collapse" class="parent"><i class="fa-solid fa-tag"></i> Catalog</a>
+													<ul id="collapse-1" class="collapse show">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/category&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Categories</a>
+																							</li>
+																				<li class="active">									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Products</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/subscription_plan&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Subscription Plans</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/filter&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Filters</a>
+																							</li>
+																				<li>									<a href="#collapse-1-4" data-bs-toggle="collapse" class="parent collapsed">Attributes</a>
+																									<ul id="collapse-1-4" class="collapse">
+																															<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/attribute&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Attributes</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/attribute_group&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Attribute Groups</a>
+																								</li>
+																														</ul>
+															</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/option&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Options</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/manufacturer&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Manufacturers</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/download&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Downloads</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/review&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Reviews</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=catalog/information&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Information</a>
+																							</li>
+																		</ul>
+							</li>
+								<li id="menu-extension">
+									<a href="#collapse-2" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-puzzle-piece"></i> Extensions</a>
+													<ul id="collapse-2" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketplace/marketplace&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Marketplace</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketplace/installer&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Installer</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketplace/extension&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Extensions</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketplace/startup&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Startup</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketplace/event&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Events</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketplace/cron&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Cron Jobs</a>
+																							</li>
+																		</ul>
+							</li>
+								<li id="menu-design">
+									<a href="#collapse-3" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-desktop"></i> Design</a>
+													<ul id="collapse-3" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=design/layout&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Layouts</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=design/theme&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Theme Editor</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=design/translation&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Language Editor</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=design/banner&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Banners</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=design/seo_url&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">SEO URL</a>
+																							</li>
+																		</ul>
+							</li>
+								<li id="menu-sale">
+									<a href="#collapse-4" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-shopping-cart"></i> Sales</a>
+													<ul id="collapse-4" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=sale/order&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Orders</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=sale/subscription&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Subscriptions</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=sale/returns&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Returns</a>
+																							</li>
+																				<li>									<a href="#collapse-4-3" data-bs-toggle="collapse" class="parent collapsed">Gift Vouchers</a>
+																									<ul id="collapse-4-3" class="collapse">
+																															<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=sale/voucher&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Gift Vouchers</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=sale/voucher_theme&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Voucher Themes</a>
+																								</li>
+																														</ul>
+															</li>
+																		</ul>
+							</li>
+								<li id="menu-customer">
+									<a href="#collapse-5" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-user"></i> Customers</a>
+													<ul id="collapse-5" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=customer/customer&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Customers</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=customer/customer_group&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Customer Groups</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=customer/customer_approval&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Customer Approvals</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=customer/gdpr&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">GDPR</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=customer/custom_field&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Custom Fields</a>
+																							</li>
+																		</ul>
+							</li>
+								<li id="menu-marketing">
+									<a href="#collapse-6" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-share-alt"></i> Marketing</a>
+													<ul id="collapse-6" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketing/affiliate&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Affiliate</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketing/marketing&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Marketing</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketing/coupon&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Coupons</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=marketing/contact&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Mail</a>
+																							</li>
+																		</ul>
+							</li>
+								<li id="menu-system">
+									<a href="#collapse-7" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-cog"></i> System</a>
+													<ul id="collapse-7" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=setting/store&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Settings</a>
+																							</li>
+																				<li>									<a href="#collapse-7-1" data-bs-toggle="collapse" class="parent collapsed">Users</a>
+																									<ul id="collapse-7-1" class="collapse">
+																															<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=user/user&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Users</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=user/user_permission&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">User Groups</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=user/api&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">API</a>
+																								</li>
+																														</ul>
+															</li>
+																				<li>									<a href="#collapse-7-2" data-bs-toggle="collapse" class="parent collapsed">Localisation</a>
+																									<ul id="collapse-7-2" class="collapse">
+																															<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/location&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Store Location</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/language&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Languages</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/currency&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Currencies</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/stock_status&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Stock Statuses</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/order_status&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Order Statuses</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/subscription_status&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Subscription Statuses</a>
+																								</li>
+																																<li>													<a href="#collapse-7-2-6" data-bs-toggle="collapse" class="parent collapsed">Returns</a>
+																																					<ul id="collapse-7-2-6" class="collapse">
+																													<li><a href="http://10.0.2.15:8081/administration/index.php?route=localisation/return_status&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Return Statuses</a></li>
+																													<li><a href="http://10.0.2.15:8081/administration/index.php?route=localisation/return_action&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Return Actions</a></li>
+																													<li><a href="http://10.0.2.15:8081/administration/index.php?route=localisation/return_reason&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Return Reasons</a></li>
+																											</ul>
+												</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/country&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Countries</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/zone&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Zones</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/geo_zone&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Geo Zones</a>
+																								</li>
+																																<li>													<a href="#collapse-7-2-10" data-bs-toggle="collapse" class="parent collapsed">Taxes</a>
+																																					<ul id="collapse-7-2-10" class="collapse">
+																													<li><a href="http://10.0.2.15:8081/administration/index.php?route=localisation/tax_class&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Tax Classes</a></li>
+																													<li><a href="http://10.0.2.15:8081/administration/index.php?route=localisation/tax_rate&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Tax Rates</a></li>
+																											</ul>
+												</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/length_class&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Length Classes</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/weight_class&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Weight Classes</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=localisation/address_format&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Address Format</a>
+																								</li>
+																														</ul>
+															</li>
+																				<li>									<a href="#collapse-7-3" data-bs-toggle="collapse" class="parent collapsed">Maintenance</a>
+																									<ul id="collapse-7-3" class="collapse">
+																															<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=tool/upgrade&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Upgrade</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=tool/backup&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Backup / Restore</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=tool/upload&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Uploads</a>
+																								</li>
+																																<li>													<a href="http://10.0.2.15:8081/administration/index.php?route=tool/log&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Error Logs</a>
+																								</li>
+																														</ul>
+															</li>
+																		</ul>
+							</li>
+								<li id="menu-report">
+									<a href="#collapse-8" data-bs-toggle="collapse" class="parent collapsed"><i class="fas fa-chart-bar"></i> Reports</a>
+													<ul id="collapse-8" class="collapse">
+																			<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=report/report&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Reports</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=report/online&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Who's Online</a>
+																							</li>
+																				<li>									<a href="http://10.0.2.15:8081/administration/index.php?route=report/statistics&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Statistics</a>
+																							</li>
+																		</ul>
+							</li>
+						</ul>
+			<div id="stats">
+			<ul>
+				<li>
+					<div>Orders Completed <span class="float-end">0%</span></div>
+					<div class="progress">
+						<div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"><span class="sr-only">0%</span></div>
+					</div>
+				</li>
+				<li>
+					<div>Orders Processing <span class="float-end">0%</span></div>
+					<div class="progress">
+						<div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"><span class="sr-only">0%</span></div>
+					</div>
+				</li>
+				<li>
+					<div>Other Statuses <span class="float-end">0%</span></div>
+					<div class="progress">
+						<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"><span class="sr-only">0%</span></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="float-end">
+        <button type="button" data-bs-toggle="tooltip" title="Filter" onclick="$('#filter-product').toggleClass('d-none');" class="btn btn-light d-lg-none"><i class="fa-solid fa-filter"></i></button>
+        <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" data-bs-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa-solid fa-plus"></i></a>
+        <button type="submit" form="form-product" formaction="http://10.0.2.15:8081/administration/index.php?route=catalog/product.copy&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" data-bs-toggle="tooltip" title="Copy" class="btn btn-light"><i class="fa-regular fa-copy"></i></button>
+        <button type="submit" form="form-product" formaction="http://10.0.2.15:8081/administration/index.php?route=catalog/product.delete&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" data-bs-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure?');" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+      </div>
+      <h1>Products</h1>
+      <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="http://10.0.2.15:8081/administration/index.php?route=common/dashboard&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Home</a></li>
+                  <li class="breadcrumb-item"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product&amp;user_token=6935205f38ea79fbfe85a3f4c1449583">Products</a></li>
+              </ol>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="filter-product" class="col-lg-3 col-md-12 order-lg-last d-none d-lg-block mb-3">
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-filter"></i> Filter</div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="input-name" class="form-label">Product Name</label>
+              <input type="text" name="filter_name" value="" placeholder="Product Name" id="input-name" data-oc-target="autocomplete-name" class="form-control" autocomplete="off">
+              <ul id="autocomplete-name" class="dropdown-menu"></ul>
+            </div>
+            <div class="mb-3">
+              <label for="input-model" class="form-label">Model</label>
+              <input type="text" name="filter_model" value="" placeholder="Model" id="input-model" data-oc-target="autocomplete-model" class="form-control" autocomplete="off">
+              <ul id="autocomplete-model" class="dropdown-menu"></ul>
+            </div>
+            <div class="mb-3">
+              <label for="input-price" class="form-label">Price</label> <input type="text" name="filter_price" value="" placeholder="Price" id="input-price" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="input-quantity" class="form-label">Quantity</label> <input type="text" name="filter_quantity" value="" placeholder="Quantity" id="input-quantity" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="input-status" class="form-label">Status</label> <select name="filter_status" id="input-status" class="form-select">
+                <option value=""></option>
+                <option value="1">Enabled</option>
+                <option value="0">Disabled</option>
+              </select>
+            </div>
+            <div class="text-end">
+              <button type="button" id="button-filter" class="btn btn-light"><i class="fa-solid fa-filter"></i> Filter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-9 col-md-12">
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-list"></i> Product List</div>
+          <div id="product" class="card-body"><form id="form-product" method="post" data-oc-toggle="ajax" data-oc-load="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583" data-oc-target="#product">
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <td class="text-center" style="width: 1px;"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', $(this).prop('checked'));" class="form-check-input"></td>
+          <td class="text-center">Image</td>
+          <td class="text-start"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;sort=pd.name&amp;order=DESC" class="asc">Product Name</a></td>
+          <td class="text-start d-none d-lg-table-cell"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;sort=p.model&amp;order=DESC">Model</a></td>
+          <td class="text-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;sort=p.price&amp;order=DESC">Price</a></td>
+          <td class="text-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;sort=p.quantity&amp;order=DESC">Quantity</a></td>
+          <td class="text-end">Action</td>
+        </tr>
+      </thead>
+      <tbody>
+                              <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="42" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/apple_cinema_30-40x40.jpg" alt="Apple Cinema 30&quot;" class="img-thumbnail"></td>
+              <td class="text-start">Apple Cinema 30"
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 15</td>
+              <td class="text-end">
+                <span style="text-decoration: line-through;">$100.00</span>
+                  <br>
+                  <div class="text-danger">$90.00</div>
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">990</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=42" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=42" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="30" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/canon_eos_5d_1-40x40.jpg" alt="Canon EOS 5D" class="img-thumbnail"></td>
+              <td class="text-start">Canon EOS 5D
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 3</td>
+              <td class="text-end">
+                <span style="text-decoration: line-through;">$100.00</span>
+                  <br>
+                  <div class="text-danger">$80.00</div>
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">7</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=30" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=30" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="47" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/hp_1-40x40.jpg" alt="HP LP3065" class="img-thumbnail"></td>
+              <td class="text-start">HP LP3065
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 21</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">1000</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=47" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=47" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="28" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/htc_touch_hd_1-40x40.jpg" alt="HTC Touch HD" class="img-thumbnail"></td>
+              <td class="text-start">HTC Touch HD
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 1</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">939</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=28" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=28" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="41" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/imac_1-40x40.jpg" alt="iMac" class="img-thumbnail"></td>
+              <td class="text-start">iMac
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 14</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">977</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=41" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=41" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="40" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/iphone_1-40x40.jpg" alt="iPhone" class="img-thumbnail"></td>
+              <td class="text-start">iPhone
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">product 11</td>
+              <td class="text-end">
+                                  $101.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">970</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=40" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=40" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="48" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/ipod_classic_1-40x40.jpg" alt="iPod Classic" class="img-thumbnail"></td>
+              <td class="text-start">iPod Classic
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">product 20</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">995</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=48" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=48" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="36" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/ipod_nano_1-40x40.jpg" alt="iPod Nano" class="img-thumbnail"></td>
+              <td class="text-start">iPod Nano
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 9</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">994</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=36" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=36" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="34" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/ipod_shuffle_1-40x40.jpg" alt="iPod Shuffle" class="img-thumbnail"></td>
+              <td class="text-start">iPod Shuffle
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 7</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">1000</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=34" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=34" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                      <tr>
+              <td class="text-center"><input type="checkbox" name="selected[]" value="32" class="form-check-input"></td>
+              <td class="text-center"><img src="http://10.0.2.15:8081/image/cache/catalog/demo/ipod_touch_1-40x40.jpg" alt="iPod Touch" class="img-thumbnail"></td>
+              <td class="text-start">iPod Touch
+                <br>
+                                  <small class="text-success">Enabled</small>
+                </td>
+              <td class="text-start d-none d-lg-table-cell">Product 5</td>
+              <td class="text-end">
+                                  $100.00
+                </td>
+              <td class="text-end">
+                                  <span class="badge bg-success">999</span>
+                </td>
+              <td class="text-end">
+                                  <div class="btn-group">
+                    <a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;product_id=32" data-bs-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.form&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;master_id=32" class="dropdown-item"><i class="fa-solid fa-plus"></i> Add Variant</a></div>
+                  </div>
+                              </td>
+            </tr>
+                        </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 text-start"><ul class="pagination">
+								<li class="page-item active"><span class="page-link">1</span></li>
+								<li class="page-item"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;page=2" class="page-link">2</a></li>
+						<li class="page-item"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;page=2" class="page-link">&gt;</a></li>
+				<li class="page-item"><a href="http://10.0.2.15:8081/administration/index.php?route=catalog/product.list&amp;user_token=6935205f38ea79fbfe85a3f4c1449583&amp;page=2" class="page-link">&gt;|</a></li>
+	</ul>
+</div>
+    <div class="col-sm-6 text-end">Showing 1 to 10 of 20 (2 Pages)</div>
+  </div>
+</form>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#product').on('click', 'thead a, .pagination a', function (e) {
+    e.preventDefault();
+
+    $('#product').load(this.href);
+});
+
+$('#button-filter').on('click', function () {
+    var url = '';
+
+    var filter_name = $('#input-name').val();
+
+    if (filter_name) {
+        url += '&filter_name=' + encodeURIComponent(filter_name);
+    }
+
+    var filter_model = $('#input-model').val();
+
+    if (filter_model) {
+        url += '&filter_model=' + encodeURIComponent(filter_model);
+    }
+
+    var filter_price = $('#input-price').val();
+
+    if (filter_price) {
+        url += '&filter_price=' + encodeURIComponent(filter_price);
+    }
+
+    var filter_quantity = $('#input-quantity').val();
+
+    if (filter_quantity) {
+        url += '&filter_quantity=' + filter_quantity;
+    }
+
+    var filter_status = $('#input-status').val();
+
+    if (filter_status !== '') {
+        url += '&filter_status=' + filter_status;
+    }
+
+    window.history.pushState({}, null, 'index.php?route=catalog/product&user_token=6935205f38ea79fbfe85a3f4c1449583' + url);
+
+    $('#product').load('index.php?route=catalog/product.list&user_token=6935205f38ea79fbfe85a3f4c1449583' + url);
+});
+
+$('#input-name').autocomplete({
+    'source': function (request, response) {
+        $.ajax({
+            url: 'index.php?route=catalog/product.autocomplete&user_token=6935205f38ea79fbfe85a3f4c1449583&filter_name=' + encodeURIComponent(request),
+            dataType: 'json',
+            success: function (json) {
+                response($.map(json, function (item) {
+                    return {
+                        label: item['name'],
+                        value: item['product_id']
+                    }
+                }));
+            }
+        });
+    },
+    'select': function (item) {
+        $('#input-name').val(item['label']);
+    }
+});
+
+$('#input-model').autocomplete({
+    'source': function (request, response) {
+        $.ajax({
+            url: 'index.php?route=catalog/product.autocomplete&user_token=6935205f38ea79fbfe85a3f4c1449583&filter_model=' + encodeURIComponent(request),
+            dataType: 'json',
+            success: function (json) {
+                response($.map(json, function (item) {
+                    return {
+                        label: item['model'],
+                        value: item['product_id']
+                    }
+                }));
+            }
+        });
+    },
+    'select': function (item) {
+        $('#input-model').val(item['label']);
+    }
+});
+//--></script>
+<footer id="footer"><a href="https://www.opencart.com">OpenCart</a> © 2009-2024 All Rights Reserved.<br>Version 4.0.2.3</footer></div>
+<script src="view/javascript/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+
+</body></html>

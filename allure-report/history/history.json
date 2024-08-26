@@ -9,51 +9,53 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "98eb7990d917bb46",
+      "uid" : "6bf0cfc5603cca51",
       "status" : "broken",
       "statusDetails" : "selenium.common.exceptions.TimeoutException: Message:",
       "time" : {
-        "start" : 1720461480664,
-        "stop" : 1720461497753,
-        "duration" : 17089
+        "start" : 1723034607867,
+        "stop" : 1723034621597,
+        "duration" : 13730
       }
     } ]
   },
   "7d181faf2f27682f61cb2a0d2e84375e" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "4f1acd73e986fe3c",
-      "status" : "passed",
+      "uid" : "a485b6f06477b115",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (389, 943)\n  (Session info: chrome=127.0.6533.88)\nStacktrace:\n#0 0x629a57b1f6ba <unknown>\n#1 0x629a577ef730 <unknown>\n#2 0x629a57845a96 <unknown>\n#3 0x629a578439ad <unknown>\n#4 0x629a57841447 <unknown>\n#5 0x629a5784030e <unknown>\n#6 0x629a57833d66 <unknown>\n#7 0x629a57861a52 <unknown>\n#8 0x629a57833719 <unknown>\n#9 0x629a57861c1e <unknown>\n#10 0x629a578801ca <unknown>\n#11 0x629a578617f3 <unknown>\n#12 0x629a57831ec9 <unknown>\n#13 0x629a5783291e <unknown>\n#14 0x629a57ae59eb <unknown>\n#15 0x629a57ae9972 <unknown>\n#16 0x629a57ad2e15 <unknown>\n#17 0x629a57aea502 <unknown>\n#18 0x629a57ab7d2f <unknown>\n#19 0x629a57b0e578 <unknown>\n#20 0x629a57b0e750 <unknown>\n#21 0x629a57b1e48c <unknown>\n#22 0x78c5b04a5ac3 <unknown>",
       "time" : {
-        "start" : 1720461468827,
-        "stop" : 1720461476720,
-        "duration" : 7893
+        "start" : 1723034596470,
+        "stop" : 1723034601723,
+        "duration" : 5253
       }
     } ]
   },
   "2987328dc021ab097458a9c10fd9e829" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "8824fef6ee996242",
-      "status" : "passed",
+      "uid" : "f7d37e60f5f5ba01",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1443, -517)\n  (Session info: chrome=127.0.6533.88)\nStacktrace:\n#0 0x5ce0a3b596ba <unknown>\n#1 0x5ce0a3829730 <unknown>\n#2 0x5ce0a387fa96 <unknown>\n#3 0x5ce0a387d9ad <unknown>\n#4 0x5ce0a387b447 <unknown>\n#5 0x5ce0a387a30e <unknown>\n#6 0x5ce0a386dd66 <unknown>\n#7 0x5ce0a389ba52 <unknown>\n#8 0x5ce0a386d719 <unknown>\n#9 0x5ce0a389bc1e <unknown>\n#10 0x5ce0a38ba1ca <unknown>\n#11 0x5ce0a389b7f3 <unknown>\n#12 0x5ce0a386bec9 <unknown>\n#13 0x5ce0a386c91e <unknown>\n#14 0x5ce0a3b1f9eb <unknown>\n#15 0x5ce0a3b23972 <unknown>\n#16 0x5ce0a3b0ce15 <unknown>\n#17 0x5ce0a3b24502 <unknown>\n#18 0x5ce0a3af1d2f <unknown>\n#19 0x5ce0a3b48578 <unknown>\n#20 0x5ce0a3b48750 <unknown>\n#21 0x5ce0a3b5848c <unknown>\n#22 0x726f24ed1ac3 <unknown>",
       "time" : {
-        "start" : 1720461404627,
-        "stop" : 1720461412240,
-        "duration" : 7613
+        "start" : 1723034561632,
+        "stop" : 1723034564906,
+        "duration" : 3274
       }
     } ]
   },
@@ -67,12 +69,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "cce53e373a3b036e",
+      "uid" : "b04da210db2c7300",
       "status" : "passed",
       "time" : {
-        "start" : 1720461501912,
-        "stop" : 1720461505977,
-        "duration" : 4065
+        "start" : 1723034624774,
+        "stop" : 1723034626636,
+        "duration" : 1862
       }
     } ]
   },
@@ -86,12 +88,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "a1b2816cdd4c4ab4",
+      "uid" : "c5da202a73c6e2b3",
       "status" : "passed",
       "time" : {
-        "start" : 1720461415511,
-        "stop" : 1720461417894,
-        "duration" : 2383
+        "start" : 1723034569519,
+        "stop" : 1723034571414,
+        "duration" : 1895
       }
     } ]
   },
@@ -105,12 +107,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "4fda20991ac70d19",
+      "uid" : "a8493ac18ed5d8ea",
       "status" : "passed",
       "time" : {
-        "start" : 1720461378292,
-        "stop" : 1720461400369,
-        "duration" : 22077
+        "start" : 1723034554845,
+        "stop" : 1723034556900,
+        "duration" : 2055
       }
     } ]
   },
@@ -124,31 +126,32 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "2473dfe26307f355",
+      "uid" : "f4100d0d50d2ae4",
       "status" : "passed",
       "time" : {
-        "start" : 1720461328972,
-        "stop" : 1720461370055,
-        "duration" : 41083
+        "start" : 1723034547972,
+        "stop" : 1723034551445,
+        "duration" : 3473
       }
     } ]
   },
   "605f1327e44636668481b9c4c06efda9" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "5456e4250e17ef9a",
-      "status" : "passed",
+      "uid" : "683f0f7fc0157922",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x5d8b3a8016ba <unknown>\n#1 0x5d8b3a4d1730 <unknown>\n#2 0x5d8b3a520d9b <unknown>\n#3 0x5d8b3a521081 <unknown>\n#4 0x5d8b3a564cd4 <unknown>\n#5 0x5d8b3a543a7d <unknown>\n#6 0x5d8b3a5621ca <unknown>\n#7 0x5d8b3a5437f3 <unknown>\n#8 0x5d8b3a513ec9 <unknown>\n#9 0x5d8b3a51491e <unknown>\n#10 0x5d8b3a7c79eb <unknown>\n#11 0x5d8b3a7cb972 <unknown>\n#12 0x5d8b3a7b4e15 <unknown>\n#13 0x5d8b3a7cc502 <unknown>\n#14 0x5d8b3a799d2f <unknown>\n#15 0x5d8b3a7f0578 <unknown>\n#16 0x5d8b3a7f0750 <unknown>\n#17 0x5d8b3a80048c <unknown>\n#18 0x771c57209ac3 <unknown>",
       "time" : {
-        "start" : 1720461430926,
-        "stop" : 1720461465849,
-        "duration" : 34923
+        "start" : 1723034582178,
+        "stop" : 1723034591926,
+        "duration" : 9748
       }
     } ]
   },
@@ -162,12 +165,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "41159042d5e065a4",
+      "uid" : "d3c2353ee0ae1f7b",
       "status" : "passed",
       "time" : {
-        "start" : 1720461422715,
-        "stop" : 1720461427116,
-        "duration" : 4401
+        "start" : 1723034574999,
+        "stop" : 1723034577306,
+        "duration" : 2307
       }
     } ]
   }

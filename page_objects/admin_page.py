@@ -38,6 +38,7 @@ class AdminPage(BasePage):
 
     @allure.step("Авторизую пользователя")
     def login(self, username, password):
+        self.current_url()
         self.get_element(self.USERNAME_INPUT).clear()
         self.get_element(self.PASSWORD_INPUT).clear()
         self.input_value(self.USERNAME_INPUT, username)
