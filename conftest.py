@@ -18,7 +18,7 @@ from selenium.webdriver.firefox.service import Service as FFService
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", choices=["chrome", "firefox", "opera", "safari", "yandex"])
     parser.addoption("--url", default="http://10.0.2.15:8081")
-    parser.addoption("--executor", action="store", default="127.0.0.1")
+    parser.addoption("--executor", action="store", default="172.18.0.2")
     parser.addoption("--mobile", action="store_true")
     parser.addoption("--vnc", action="store_true")
     parser.addoption("--logs", action="store_true")
