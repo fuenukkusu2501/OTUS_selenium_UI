@@ -1,0 +1,186 @@
+{
+  "uid" : "6a63fd284c744884",
+  "name" : "Авторизация (админка)",
+  "fullName" : "tests.test_start#test_admin_login",
+  "historyId" : "b25d339a38b605469f6d5d3aad2aaf0c",
+  "time" : {
+    "start" : 1725210208318,
+    "stop" : 1725210219190,
+    "duration" : 10872
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1725210208318,
+      "stop" : 1725210208318,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "browser",
+    "time" : {
+      "start" : 1725210198241,
+      "stop" : 1725210208318,
+      "duration" : 10077
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "150c71b21672de4",
+      "name" : "7368bd6e644fa915696908b8172c3995",
+      "source" : "150c71b21672de4.json",
+      "type" : "application/json",
+      "size" : 1083
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открываю http://10.0.2.15:8081/administration",
+      "time" : {
+        "start" : 1725210208318,
+        "stop" : 1725210210484,
+        "duration" : 2166
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Авторизую пользователя",
+      "time" : {
+        "start" : 1725210210493,
+        "stop" : 1725210216286,
+        "duration" : 5793
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "username",
+        "value" : "'user'"
+      }, {
+        "name" : "password",
+        "value" : "'qwerty!123'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Получаю имя пользователя",
+      "time" : {
+        "start" : 1725210216286,
+        "stop" : 1725210219117,
+        "duration" : 2831
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Получаю второе имя пользователя",
+      "time" : {
+        "start" : 1725210219117,
+        "stop" : 1725210219181,
+        "duration" : 64
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "df3004369876953f",
+      "name" : "log",
+      "source" : "df3004369876953f.txt",
+      "type" : "text/plain",
+      "size" : 63
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::finalizer",
+    "time" : {
+      "start" : 1725210219191,
+      "stop" : 1725210219307,
+      "duration" : 116
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "fuenukkusu2501-VirtualBox"
+  }, {
+    "name" : "thread",
+    "value" : "135533-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6a63fd284c744884.json",
+  "parameterValues" : [ ]
+}

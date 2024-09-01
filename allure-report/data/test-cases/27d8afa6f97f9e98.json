@@ -1,0 +1,120 @@
+{
+  "uid" : "27d8afa6f97f9e98",
+  "name" : "Наличие элементов",
+  "fullName" : "tests.test_start#test_elements",
+  "historyId" : "1bec7b78e404943e29c95d0d988030ca",
+  "time" : {
+    "start" : 1725210192347,
+    "stop" : 1725210197948,
+    "duration" : 5601
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "base_url",
+    "time" : {
+      "start" : 1725210192345,
+      "stop" : 1725210192345,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "browser",
+    "time" : {
+      "start" : 1725210182649,
+      "stop" : 1725210192345,
+      "duration" : 9696
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "cbde676eba6a6994",
+      "name" : "f7601f7633c1f2d50f1eb8dee0cbd0c3",
+      "source" : "cbde676eba6a6994.json",
+      "type" : "application/json",
+      "size" : 1083
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "bb83168d59349df0",
+      "name" : "log",
+      "source" : "bb83168d59349df0.txt",
+      "type" : "text/plain",
+      "size" : 63
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::finalizer",
+    "time" : {
+      "start" : 1725210197949,
+      "stop" : 1725210198224,
+      "duration" : 275
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_start"
+  }, {
+    "name" : "host",
+    "value" : "fuenukkusu2501-VirtualBox"
+  }, {
+    "name" : "thread",
+    "value" : "135533-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_start"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "27d8afa6f97f9e98.json",
+  "parameterValues" : [ ]
+}

@@ -4,67 +4,50 @@
   "children" : [ {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1443, -517)\n  (Session info: chrome=127.0.6533.88)\nStacktrace:\n#0 0x5ce0a3b596ba <unknown>\n#1 0x5ce0a3829730 <unknown>\n#2 0x5ce0a387fa96 <unknown>\n#3 0x5ce0a387d9ad <unknown>\n#4 0x5ce0a387b447 <unknown>\n#5 0x5ce0a387a30e <unknown>\n#6 0x5ce0a386dd66 <unknown>\n#7 0x5ce0a389ba52 <unknown>\n#8 0x5ce0a386d719 <unknown>\n#9 0x5ce0a389bc1e <unknown>\n#10 0x5ce0a38ba1ca <unknown>\n#11 0x5ce0a389b7f3 <unknown>\n#12 0x5ce0a386bec9 <unknown>\n#13 0x5ce0a386c91e <unknown>\n#14 0x5ce0a3b1f9eb <unknown>\n#15 0x5ce0a3b23972 <unknown>\n#16 0x5ce0a3b0ce15 <unknown>\n#17 0x5ce0a3b24502 <unknown>\n#18 0x5ce0a3af1d2f <unknown>\n#19 0x5ce0a3b48578 <unknown>\n#20 0x5ce0a3b48750 <unknown>\n#21 0x5ce0a3b5848c <unknown>\n#22 0x726f24ed1ac3 <unknown>",
-      "children" : [ {
-        "name" : "Добавление товара в корзину",
-        "uid" : "f7d37e60f5f5ba01",
-        "parentUid" : "7fa4e9fde96382056ce51ebb70d5fba5",
-        "status" : "broken",
-        "time" : {
-          "start" : 1723034561632,
-          "stop" : 1723034564906,
-          "duration" : 3274
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "7fa4e9fde96382056ce51ebb70d5fba5"
-    }, {
-      "name" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x5d8b3a8016ba <unknown>\n#1 0x5d8b3a4d1730 <unknown>\n#2 0x5d8b3a520d9b <unknown>\n#3 0x5d8b3a521081 <unknown>\n#4 0x5d8b3a564cd4 <unknown>\n#5 0x5d8b3a543a7d <unknown>\n#6 0x5d8b3a5621ca <unknown>\n#7 0x5d8b3a5437f3 <unknown>\n#8 0x5d8b3a513ec9 <unknown>\n#9 0x5d8b3a51491e <unknown>\n#10 0x5d8b3a7c79eb <unknown>\n#11 0x5d8b3a7cb972 <unknown>\n#12 0x5d8b3a7b4e15 <unknown>\n#13 0x5d8b3a7cc502 <unknown>\n#14 0x5d8b3a799d2f <unknown>\n#15 0x5d8b3a7f0578 <unknown>\n#16 0x5d8b3a7f0750 <unknown>\n#17 0x5d8b3a80048c <unknown>\n#18 0x771c57209ac3 <unknown>",
+      "name" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x63debcfa26ba <unknown>\n#1 0x63debcc72730 <unknown>\n#2 0x63debccc1d9b <unknown>\n#3 0x63debccc2081 <unknown>\n#4 0x63debcd05cd4 <unknown>\n#5 0x63debcce4a7d <unknown>\n#6 0x63debcd031ca <unknown>\n#7 0x63debcce47f3 <unknown>\n#8 0x63debccb4ec9 <unknown>\n#9 0x63debccb591e <unknown>\n#10 0x63debcf689eb <unknown>\n#11 0x63debcf6c972 <unknown>\n#12 0x63debcf55e15 <unknown>\n#13 0x63debcf6d502 <unknown>\n#14 0x63debcf3ad2f <unknown>\n#15 0x63debcf91578 <unknown>\n#16 0x63debcf91750 <unknown>\n#17 0x63debcfa148c <unknown>\n#18 0x7646c11b1ac3 <unknown>",
       "children" : [ {
         "name" : "Создать товар",
-        "uid" : "683f0f7fc0157922",
-        "parentUid" : "42a771be000fd535e2e37b07da72c2cf",
+        "uid" : "8a9c937c52e1389",
+        "parentUid" : "c2ad022502a91bbdcf4fb5049a9132d4",
         "status" : "broken",
         "time" : {
-          "start" : 1723034582178,
-          "stop" : 1723034591926,
-          "duration" : 9748
+          "start" : 1725210313410,
+          "stop" : 1725210335202,
+          "duration" : 21792
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "42a771be000fd535e2e37b07da72c2cf"
+      "uid" : "c2ad022502a91bbdcf4fb5049a9132d4"
     }, {
-      "name" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (389, 943)\n  (Session info: chrome=127.0.6533.88)\nStacktrace:\n#0 0x629a57b1f6ba <unknown>\n#1 0x629a577ef730 <unknown>\n#2 0x629a57845a96 <unknown>\n#3 0x629a578439ad <unknown>\n#4 0x629a57841447 <unknown>\n#5 0x629a5784030e <unknown>\n#6 0x629a57833d66 <unknown>\n#7 0x629a57861a52 <unknown>\n#8 0x629a57833719 <unknown>\n#9 0x629a57861c1e <unknown>\n#10 0x629a578801ca <unknown>\n#11 0x629a578617f3 <unknown>\n#12 0x629a57831ec9 <unknown>\n#13 0x629a5783291e <unknown>\n#14 0x629a57ae59eb <unknown>\n#15 0x629a57ae9972 <unknown>\n#16 0x629a57ad2e15 <unknown>\n#17 0x629a57aea502 <unknown>\n#18 0x629a57ab7d2f <unknown>\n#19 0x629a57b0e578 <unknown>\n#20 0x629a57b0e750 <unknown>\n#21 0x629a57b1e48c <unknown>\n#22 0x78c5b04a5ac3 <unknown>",
+      "name" : "selenium.common.exceptions.TimeoutException: Message: \nStacktrace:\n#0 0x562527abb6ba <unknown>\n#1 0x56252778b730 <unknown>\n#2 0x5625277dad9b <unknown>\n#3 0x5625277db081 <unknown>\n#4 0x56252781ecd4 <unknown>\n#5 0x5625277fda7d <unknown>\n#6 0x56252781c1ca <unknown>\n#7 0x5625277fd7f3 <unknown>\n#8 0x5625277cdec9 <unknown>\n#9 0x5625277ce91e <unknown>\n#10 0x562527a819eb <unknown>\n#11 0x562527a85972 <unknown>\n#12 0x562527a6ee15 <unknown>\n#13 0x562527a86502 <unknown>\n#14 0x562527a53d2f <unknown>\n#15 0x562527aaa578 <unknown>\n#16 0x562527aaa750 <unknown>\n#17 0x562527aba48c <unknown>\n#18 0x72fe3c232ac3 <unknown>",
       "children" : [ {
         "name" : "Удалить товар",
-        "uid" : "a485b6f06477b115",
-        "parentUid" : "d3f078d1fc58d8fb1dd607d713941f8a",
+        "uid" : "9d0a6d3ea994ca90",
+        "parentUid" : "fe1be63040b63b8aae349655dba761eb",
         "status" : "broken",
         "time" : {
-          "start" : 1723034596470,
-          "stop" : 1723034601723,
-          "duration" : 5253
+          "start" : 1725210344334,
+          "stop" : 1725210356526,
+          "duration" : 12192
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "d3f078d1fc58d8fb1dd607d713941f8a"
+      "uid" : "fe1be63040b63b8aae349655dba761eb"
     }, {
       "name" : "selenium.common.exceptions.TimeoutException: Message:",
       "children" : [ {
         "name" : "Регистрация",
-        "uid" : "6bf0cfc5603cca51",
+        "uid" : "1a2ecf3c6a630de9",
         "parentUid" : "31bb78a6a95ede3f78b260ed048910d8",
         "status" : "broken",
         "time" : {
-          "start" : 1723034607867,
-          "stop" : 1723034621597,
-          "duration" : 13730
+          "start" : 1725210364722,
+          "stop" : 1725210380558,
+          "duration" : 15836
         },
         "flaky" : false,
         "newFailed" : false,
