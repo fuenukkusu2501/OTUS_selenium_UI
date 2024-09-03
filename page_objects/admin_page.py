@@ -65,7 +65,7 @@ class AdminPage(BasePage):
 
     @allure.step("Перехожу в меню Каталог")
     def select_catalog(self):
-        self.get_element(self.CATALOG_BUTTON).click()
+        self.get_element_clickable(self.CATALOG_BUTTON).click()
 
     @allure.step("Выбираю товар")
     def select_products(self):

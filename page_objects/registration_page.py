@@ -1,3 +1,5 @@
+import time
+
 import allure
 from faker import Faker
 from selenium.webdriver.common.by import By
@@ -42,7 +44,8 @@ class RegistrationPage(BasePage):
     @allure.step("Получаю текст заголовка")
     def get_title_text(self):
         WebDriverWait(self.browser, 10).until(
-        EC.url_contains("http://10.0.2.15:8081/en-gb?route=account/success&customer"))
+        EC.url_contains("/success&customer"))
+        time.sleep(1)
         title = self.get_element(self.TITLE)
         title_text = title.text
         return title_text
