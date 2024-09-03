@@ -6,10 +6,18 @@ import allure
 class HeaderElement(BasePage):
     CURRENCY_BUTTON = By.XPATH, "//*[text()='Currency']"
     CURRENCY_ICON = By.XPATH, "//strong"
+    SEARCH_FIELD = By.CSS_SELECTOR, ".form-control.form-control-lg"
+    SEARCH_BUTTON = By.CSS_SELECTOR, ".btn.btn-light.btn-lg"
 
     def open(self, url):
         with allure.step(f"Открываю {url}"):
             self.browser.get(url)
+
+    @allure.step("Ищу товар")
+    def search_product(self, text):
+        self.input_value(self.SEARCH_FIELD,text)
+        self.get_element(self.SEARCH_BUTTON).click()
+
 
     @allure.step("Кликаю на Валюты")
     def click_currency(self):

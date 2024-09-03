@@ -1,9 +1,10 @@
 import allure
+from faker import Faker
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from page_objects.base_page import BasePage
-
+faker = Faker()
 
 class RegistrationPage(BasePage):
     PATH = "/en-gb?route=account/register"
@@ -20,7 +21,11 @@ class RegistrationPage(BasePage):
             self.browser.get(url + self.PATH)
 
     @allure.step("Ввожу данные для регистрации")
-    def input_data(self, firstname, lastname, email, password):
+    def input_data(self):
+        firstname = faker.first_name()
+        lastname = faker.last_name()
+        email = faker.email()
+        password = faker.password()
         self.input_value(self.FIRSTMANE_INPUT, firstname)
         self.input_value(self.LASTNAME_INPUT, lastname)
         self.input_value(self.EMAIL_INPUT, email)

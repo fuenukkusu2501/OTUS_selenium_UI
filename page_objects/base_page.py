@@ -5,6 +5,7 @@ import selenium
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import ElementClickInterceptedException
 
 from conftest import browser
 
@@ -27,12 +28,23 @@ class BasePage:
         self.logger.info(f"Open {url}")
         self.browser.get(url)
 
-    def current_url(self):
-        current_url = self.browser.current_url
-        print("Current URL:", current_url)
+    # def current_url(self):
+    #     current_url = self.browser.current_url
+    #     print("Current URL:", current_url)
 
-    def get_element(self, locator: tuple, timeout=5):
+    def get_element(self, locator: tuple, timeout=3):
         return WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located(locator))
+
+    def get_element_clickable(self, locator: tuple, timeout=5):
+        try:
+            return WebDriverWait(self.browser, timeout).until(
+                EC.element_to_be_clickable(locator)
+            )
+        except ElementClickInterceptedException:
+            element = self.browser.find_element(*locator)
+            self.browser.execute_script("arguments[0].scrollIntoView(true); arguments[0].click();", element)
+            return element
+
 
     def get_elements(self, locator: tuple, timeout=3):
         return WebDriverWait(self.browser, timeout).until(EC.visibility_of_all_elements_located(locator))

@@ -1,6 +1,9 @@
 import allure
 from selenium.webdriver.common.by import By
 from page_objects.base_page import BasePage
+from faker import Faker
+
+faker = Faker()
 
 
 class AdminPage(BasePage):
@@ -19,7 +22,7 @@ class AdminPage(BasePage):
     INPUT_SEO_NAME = By.CSS_SELECTOR, "#input-keyword-0-1"
     SAVE_PRODUCT_BUTTON = By.CSS_SELECTOR, ".fa-solid.fa-floppy-disk"
     LAST_PAGE = By.XPATH, "//*[text()='>|']"
-    LAST_PRODUCT = By.CSS_SELECTOR, "tr:nth-child(10) > td:nth-child(1) > input"
+    LAST_PRODUCT = (By.CSS_SELECTOR, "tr:last-child > td:nth-child(1) > input")
     POPUP_SUCCESS = By.XPATH, "//div[contains(text(),'Success: You have modified products!')]"
 
     def open(self, url):
@@ -38,7 +41,6 @@ class AdminPage(BasePage):
 
     @allure.step("Авторизую пользователя")
     def login(self, username, password):
-        self.current_url()
         self.get_element(self.USERNAME_INPUT).clear()
         self.get_element(self.PASSWORD_INPUT).clear()
         self.input_value(self.USERNAME_INPUT, username)
@@ -86,15 +88,18 @@ class AdminPage(BasePage):
         self.get_element(self.DATA_TAB).click()
 
     @allure.step("Прописываю артикул")
-    def add_model(self, text):
+    def add_model(self):
+        text = str(faker.random_int(min=10000, max=99999))
         self.input_value(self.INPUT_MODEL, text)
+
 
     @allure.step("Выбираю вкладку SEO")
     def select_seo_tab(self):
         self.get_element(self.SEO_TAB).click()
 
     @allure.step("Прописываю имя SEO")
-    def add_seo_name(self, text):
+    def add_seo_name(self):
+        text = str(faker.random_int(min=10000, max=99999))
         self.input_value(self.INPUT_SEO_NAME, text)
 
     @allure.step("Сохраняю товар")

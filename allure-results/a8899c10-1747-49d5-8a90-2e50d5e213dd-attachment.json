@@ -1,0 +1,30 @@
+{
+    "acceptInsecureCerts": false,
+    "browserName": "chrome",
+    "browserVersion": "128.0.6613.86",
+    "chrome": {
+        "chromedriverVersion": "128.0.6613.86 (3045ed680fdab64f784f3b366cfe74adbdf6ff01-refs/branch-heads/6613@{#1337})",
+        "userDataDir": "/tmp/.org.chromium.Chromium.0w49Ij"
+    },
+    "fedcm:accounts": true,
+    "goog:chromeOptions": {
+        "debuggerAddress": "localhost:44961"
+    },
+    "networkConnectionEnabled": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "linux",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": {
+        "implicit": 0,
+        "pageLoad": 300000,
+        "script": 30000
+    },
+    "unhandledPromptBehavior": "dismiss and notify",
+    "webauthn:extension:credBlob": true,
+    "webauthn:extension:largeBlob": true,
+    "webauthn:extension:minPinLength": true,
+    "webauthn:extension:prf": true,
+    "webauthn:virtualAuthenticators": true
+}

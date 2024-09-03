@@ -4,7 +4,7 @@ from page_objects.base_page import BasePage
 
 
 class HomePage(BasePage):
-    LISTING_CART_BUTTON = By.CSS_SELECTOR, ".fa-solid.fa-shopping-cart"
+    LISTING_CART_BUTTON = By.CSS_SELECTOR, "button[title='Add to Cart']"
     HOMEPAGE_CART_BUTTON = By.CSS_SELECTOR, ".btn.btn-lg.btn-inverse.btn-block.dropdown-toggle"
     PRICE = By.CSS_SELECTOR, ".price-new"
 
@@ -22,7 +22,7 @@ class HomePage(BasePage):
 
     @allure.step("Добавляю товар в корзину")
     def add_product_to_cart(self):
-        self.get_element(self.LISTING_CART_BUTTON).click()
+        self.get_element_clickable(self.LISTING_CART_BUTTON).click()
 
     @allure.step("Получаю название товара в листинге")
     def get_product_name_listing(self):
@@ -38,7 +38,7 @@ class HomePage(BasePage):
 
     @allure.step("Нажимаю на корзину")
     def click_cart_button(self):
-        self.get_element(self.HOMEPAGE_CART_BUTTON).click()
+        self.get_element_clickable(self.HOMEPAGE_CART_BUTTON).click()
 
     @allure.step("Получаю валюту цены товара")
     def get_price_value(self):
