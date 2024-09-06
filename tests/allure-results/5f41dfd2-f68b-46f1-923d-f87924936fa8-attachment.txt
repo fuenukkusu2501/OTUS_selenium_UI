@@ -1,1 +1,0 @@
-WARNING  test_start:test_start.py:144 THIS IS FROM LOG!
