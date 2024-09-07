@@ -24,7 +24,7 @@ OTUS_selenium_UI/
 │   └── test_start.py       # Тесты
 │
 ├── progs/                  # Вспомогательные программы
-│   ├── allure-2.13.9.tgz   # Архив для первичной установки Allure
+│   ├── allure-2.13.9.tgz   # Архив для установки Allure
 │   └── cm_linux_amd64      # Бинарный файл для запуска Selenoid
 │
 ├── requirements.txt        # Список пакетов, необходимых для работы проекта
