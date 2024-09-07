@@ -1,12 +1,8 @@
-import os
-import random
-import time
 import logging
 import json
 
 import allure
 import pytest
-import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
@@ -64,10 +60,7 @@ def browser(request):
         elif browser_name == "chrome":
             options = ChromeOptions()
             options.add_argument("--no-sandbox")
-            # options.add_argument('--disable-blink-features=AutomationControlled')
-            # options.add_argument('--remote-debugging-port=9222')
-            # options.add_argument("--disable-dev-shm-usage")
-            # options.add_argument("--disable-gpu")
+            # options.add_argument("--headless")
             if headless_mode:
                 options.add_argument("headless=new")
             driver = webdriver.Chrome(service=ChromeService(), options=options)
@@ -85,11 +78,7 @@ def browser(request):
 
         if browser_name == "chrome":
             options = ChromeOptions()
-            # options.add_argument("--no-sandbox")
-            # options.add_argument("--disable-dev-shm-usage")
-            # options.add_argument("--disable-gpu")
             # options.add_argument("--headless")
-            # options.add_argument("--remote-debugging-port=9222")
         elif browser_name == "firefox":
             options = FirefoxOptions()
             # options.headless = True
@@ -106,7 +95,7 @@ def browser(request):
             "selenoid:options": {
                 "enableVNC": vnc,
                 "name": request.node.name,
-            #     "screenResolution": "1280x2000",
+                "screenResolution": "1920x1080",
                 "enableVideo": video,
             #     "enableLog": logs,
             #     "timeZone": "Europe/Moscow",
@@ -126,6 +115,8 @@ def browser(request):
         if not mobile:
             driver.maximize_window()
 
+    driver.set_window_size(1920, 1080)
+
     driver.test_name = request.node.name
     driver.log_level = logging.DEBUG
 
@@ -135,7 +126,6 @@ def browser(request):
         attachment_type=allure.attachment_type.JSON
     )
 
-    driver.set_window_size(1920, 1080)
 
     def finalizer():
         if hasattr(request.node, "_failed") and request.node._failed:

@@ -1,11 +1,10 @@
 import logging
 import os
-import selenium
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
 
 from conftest import browser
 
@@ -37,12 +36,21 @@ class BasePage:
 
     def get_element_clickable(self, locator: tuple, timeout=5):
         try:
+            element = WebDriverWait(self.browser, timeout).until(
+                EC.presence_of_element_located(locator)
+            )
+            # Прокручиваем страницу до элемента
+            self.browser.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+            # Ожидаем, пока элемент станет кликабельным
             return WebDriverWait(self.browser, timeout).until(
                 EC.element_to_be_clickable(locator)
             )
-        except ElementClickInterceptedException:
+        except (ElementClickInterceptedException, TimeoutException) as e:
+            print(f"Exception caught: {e}")
             element = self.browser.find_element(*locator)
-            self.browser.execute_script("arguments[0].scrollIntoView(true); arguments[0].click();", element)
+            # Используем JavaScript для клика, если элемент перекрыт
+            self.browser.execute_script("arguments[0].scrollIntoView({block: 'center'}); arguments[0].click();",
+                                        element)
             return element
 
 

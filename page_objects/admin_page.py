@@ -108,7 +108,7 @@ class AdminPage(BasePage):
 
     @allure.step("Перехожу на последнюю страницу")
     def to_the_last_page(self):
-        self.get_element(self.LAST_PAGE).click()
+        self.get_element_clickable(self.LAST_PAGE).click()
 
     @allure.step("Выбираю последний товар в списке")
     def select_last_product(self):

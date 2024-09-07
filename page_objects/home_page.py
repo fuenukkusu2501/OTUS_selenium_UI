@@ -6,6 +6,7 @@ from page_objects.base_page import BasePage
 class HomePage(BasePage):
     LISTING_CART_BUTTON = By.CSS_SELECTOR, "button[title='Add to Cart']"
     HOMEPAGE_CART_BUTTON = By.CSS_SELECTOR, ".btn.btn-lg.btn-inverse.btn-block.dropdown-toggle"
+    POP_UP_CLOSE_BUTTON = By.CSS_SELECTOR, ".btn-close"
     PRICE = By.CSS_SELECTOR, ".price-new"
 
     def open(self, url):
@@ -39,6 +40,10 @@ class HomePage(BasePage):
     @allure.step("Нажимаю на корзину")
     def click_cart_button(self):
         self.get_element_clickable(self.HOMEPAGE_CART_BUTTON).click()
+
+    @allure.step("Закрываю поп-ап")
+    def close_pop_up(self):
+        self.get_element_clickable(self.POP_UP_CLOSE_BUTTON).click()
 
     @allure.step("Получаю валюту цены товара")
     def get_price_value(self):

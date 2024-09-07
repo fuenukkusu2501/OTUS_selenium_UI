@@ -64,6 +64,7 @@ def test_add_to_cart(browser, base_url):
     home_page.add_product_to_cart()
     product_name_listing = home_page.get_product_name_listing()
     home_page.scroll_up()
+    home_page.close_pop_up()
     home_page.click_cart_button()
     product_name_cart = home_page.get_product_name_cart()
     with allure.step("Проверяю, что добавленный товар находится в корзине"):
